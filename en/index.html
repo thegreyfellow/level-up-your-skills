@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Level Up Your Skills — build your main skill</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../reveal/reveal.css">
+<link rel="stylesheet" href="../reveal/theme/white.css" id="theme">
+<link rel="stylesheet" href="../reveal/plugin/highlight/monokai.css">
+<style>
+  :root { --accent: #b3261e; --ink: #1a1a1a; --soft: #666; }
+  .reveal { font-family: "Inter", "Segoe UI", system-ui, sans-serif; font-size: 30px; color: var(--ink); }
+  .reveal h1 { font-size: 2.4em; font-weight: 800; }
+  .reveal h2 { font-size: 1.25em; font-weight: 700; text-align: left; margin-bottom: .6em; }
+  .reveal h3 { font-size: 1.0em; font-weight: 700; text-align: left; }
+  .reveal section { text-align: left; }
+  .reveal pre { width: 100%; font-size: .55em; line-height: 1.35; }
+  .reveal code { font-family: "JetBrains Mono", "Fira Code", monospace; }
+  .reveal ul { display: block; }
+  .reveal li { margin: .35em 0; }
+  .kicker { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: .55em; margin-bottom: 1.2em; }
+  .muted { color: var(--soft); }
+  .accent { color: var(--accent); font-weight: 700; }
+  .title-slide h1 { text-align: center; margin-bottom: .2em; }
+  .title-slide .sub { text-align: center; font-size: .85em; color: var(--soft); }
+  .title-slide .meta { text-align: center; font-size: .6em; margin-top: 2.5em; }
+  .cards { display: flex; gap: 1.2em; margin-top: 1em; }
+  .card { flex: 1; border: 2px solid #ddd; border-radius: 10px; padding: .8em 1em; background: #fafafa; }
+  .card .cmd { font-family: monospace; font-weight: 700; font-size: 1.0em; color: var(--accent); }
+  .card .role { font-size: .5em; text-transform: uppercase; letter-spacing: .1em; color: var(--soft); margin: .3em 0 .5em; }
+  .card p { font-size: .62em; margin: 0; line-height: 1.35; }
+  .phases { display: flex; align-items: stretch; gap: .55em; margin: 1.1em 0 .8em; }
+  .phase { flex: 1; border: 2px solid var(--ink); border-radius: 9px; padding: .5em .55em; text-align: center; }
+  .phase .n { font-size: .5em; color: var(--soft); }
+  .phase b { display: block; font-size: .78em; line-height: 1.1; margin-top: .1em; }
+  .phase small { display: block; font-size: .48em; color: var(--soft); margin-top: .25em; }
+  .phase.gate { border-color: var(--accent); background: var(--accent); color: #fff; }
+  .phase.gate .n, .phase.gate small { color: #ffd9d6; }
+  .arrow { align-self: center; font-size: .8em; color: var(--soft); }
+  .flow-note { font-size: .55em; color: var(--soft); margin-top: .6em; }
+  table.tools { font-size: .58em; width: 100%; border-collapse: collapse; }
+  table.tools th, table.tools td { border: 1px solid #ccc; padding: .45em .6em; text-align: left; vertical-align: top; }
+  table.tools th { background: #f2f2f2; }
+  table.tools code { font-size: .92em; }
+  .big-num { font-size: 2.2em; font-weight: 800; color: var(--accent); line-height: 1; }
+  .exercise-tag { position: absolute; top: -1.6em; left: 0; font-size: .45em; letter-spacing: .12em; color: #fff; background: var(--accent); padding: .25em .8em; border-radius: 4px; text-transform: uppercase; font-weight: 700; }
+  .step h2 .t { float: right; color: var(--soft); font-weight: 400; font-size: .55em; margin-top: .35em; }
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<!-- ══════════ PART 1 — PRESENTING (20 min) ══════════ -->
+
+<section class="title-slide">
+  <h1>Level Up Your Skills</h1>
+  <p class="sub">Build the skill that makes your agents work <em>like you</em></p>
+  <p class="meta">Workshop · 45 min · ½ demo, ½ you write code (markdown)<br>Cursor · Copilot · Antigravity · Claude Code · OpenCode</p>
+  <aside class="notes">0:00 — 30 s. Who I am. State the deal: 20 min I show you my stack, 25 min you write yours and leave with two usable files for YOUR tool. Hammer the point: nothing we build today is tool-specific — it's markdown.</aside>
+</section>
+
+<section>
+  <p class="kicker">The problem</p>
+  <h2>You've already written these lines. Yesterday.</h2>
+  <blockquote style="font-size:.8em">"Make a plan before coding." · "No new dependencies." · "Re-read the spec." · "Verify before saying done." · "Clean commits."</blockquote>
+  <ul>
+    <li>Rewritten in <strong>three different tools</strong>, often the same day</li>
+    <li>The context window is a goldfish: <strong>every session starts from zero</strong></li>
+    <li>Your experience is the first casualty of the context window</li>
+  </ul>
+  <aside class="notes">1:00. Quick show of hands: who rewrote the same instruction to an agent this week? The agent doesn't learn from your corrections — the only reliable memory is a file. Transition: so let's write the file.</aside>
+</section>
+
+<section>
+  <p class="kicker">The realization</p>
+  <h2>The way you work is a process. Write it down once.</h2>
+  <ul>
+    <li>A skill = <strong>one markdown file + one description</strong>. That's it.</li>
+    <li>No code · no plugin · no subscription</li>
+    <li>Loaded <strong>at the right moment</strong> by the tool you already use</li>
+    <li>Versionable, diffable, shareable — like code</li>
+  </ul>
+  <p class="muted" style="font-size:.7em">You're developers: your process deserves a repo, not sticky notes in a chat.</p>
+  <aside class="notes">2:00. Vocabulary: depending on the tool it's called a skill, rules or instructions — same principle, text injected into context at the right moment. The "right moment" is the <em>description</em>: that's what the model reads to decide to load the skill. We'll come back to this — it's quality point #1.</aside>
+</section>
+
+<section>
+  <p class="kicker">My stack</p>
+  <h2>Three layers, three questions</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="cmd">/workflow</div>
+      <div class="role">the what</div>
+      <p>My process: brainstorm → plan → approval → build → validation.<br><strong>113 lines.</strong></p>
+    </div>
+    <div class="card">
+      <div class="cmd">ponytail</div>
+      <div class="role">how little</div>
+      <p>Anti-overengineering: smallest diff, stdlib first, YAGNI. The best code is the code never written.</p>
+    </div>
+    <div class="card">
+      <div class="cmd">tokenjuice</div>
+      <div class="role">the budget</div>
+      <p>Context hygiene: truncates output, kills duplicates. The session holds for hours without compaction.</p>
+    </div>
+  </div>
+  <p class="muted" style="font-size:.62em; margin-top:1em">workflow + ponytail = markdown, portable everywhere · tokenjuice = OpenCode extension (the luxury)</p>
+  <aside class="notes">3:00. The three layers: the process, the guardrails, the context economy. The first two are markdown → usable in all 5 tools in this room. The third is OpenCode-specific, I'm showing it for culture. Then we zoom into /workflow.</aside>
+</section>
+
+<section>
+  <p class="kicker">/workflow — the file</p>
+  <h2>Five phases, two gates</h2>
+  <div class="phases">
+    <div class="phase"><span class="n">1</span><b>Brainstorm</b><small>classify the task</small></div>
+    <div class="arrow">→</div>
+    <div class="phase"><span class="n">2</span><b>Plan</b><small>files, truth, ceiling</small></div>
+    <div class="arrow">→</div>
+    <div class="phase gate"><span class="n">⛔ 3</span><b>APPROVE</b><small>human decides</small></div>
+    <div class="arrow">→</div>
+    <div class="phase"><span class="n">4</span><b>Build</b><small>one subagent per task</small></div>
+    <div class="arrow">→</div>
+    <div class="phase gate"><span class="n">⛔ 5</span><b>VALIDATE</b><small>human decides</small></div>
+  </div>
+  <ul style="font-size:.75em">
+    <li>Constant principles: smallest diff · stdlib and existing code before dependencies · YAGNI · <strong>proof before "done"</strong></li>
+    <li>Loops: build failure → redo the build · requirement change → back to plan</li>
+  </ul>
+  <aside class="notes">4:30. Read the diagram at a high level. The two red gates = the only two moments where everything stops and a human decides. Between them: full autonomy. That's the contract: autonomy in exchange for checkpoints.</aside>
+</section>
+
+<section>
+  <p class="kicker">Why it works — 1/5</p>
+  <h2>The two gates: never self-approve</h2>
+  <ul>
+    <li>The agent <strong>stops and waits</strong>: the plan before code, fresh test output before "done"</li>
+    <li>"Done" = <strong>the verification command passes</strong> — nothing else counts</li>
+    <li>Human control at the only two irreversible points: <em>before</em> writing, <em>after</em> writing</li>
+  </ul>
+  <p style="font-size:.75em">The #1 agent problem: optimizing to <em>look done</em>. A gate IS the specification of stopping.</p>
+  <aside class="notes">6:00. The heart of the skill. Without a gate, the agent chains plan→code→"done!" in one breath and you discover the result. With one: you see the plan while it still costs 0 lines of code. "Just do it" counts as approval — it's written down.</aside>
+</section>
+
+<section>
+  <p class="kicker">Why it works — 2/5</p>
+  <h2>Classify before charging ahead</h2>
+  <ul>
+    <li><strong>Spike</strong> — an answer, not code. Throwaway by definition.</li>
+    <li><strong>Bounded</strong> — a well-scoped change. Short design, in chat.</li>
+    <li><strong>Architectural</strong> — new subsystem. 2-3 options + recommendation.</li>
+  </ul>
+  <ul style="font-size:.8em">
+    <li>The ratchet only goes one way: hidden complexity upgrades, never downgrades</li>
+    <li>"Too simple for a design" <strong>does not exist</strong> — a design can be 2 sentences</li>
+    <li>"X already covers it" is a <strong>valid</strong> ending</li>
+  </ul>
+  <aside class="notes">7:30. Classification avoids both pathologies: over-processing a small task (useless ceremony) and under-processing a big one (the agent charges into 3 files). The ratchet protects against hidden complexity discovered along the way. And no — every task gets a design, even a two-sentence one. That's what kills "too simple to…".</aside>
+</section>
+
+<section>
+  <p class="kicker">Why it works — 3/5</p>
+  <h2>Build: one subagent per task</h2>
+  <ul>
+    <li>1 task = 1 subagent with <strong>fresh context</strong>. The prompt = its entire world</li>
+    <li>Report contract: <code>DONE · DONE_WITH_CONCERNS · NEEDS_CONTEXT · BLOCKED</code></li>
+    <li>The controller <strong>reviews the diff</strong>. It never writes code.</li>
+    <li>Thresholds: 3 fix rounds → stronger model · 5 → re-plan · ~150 lines → re-approval</li>
+  </ul>
+  <p class="muted" style="font-size:.72em">Your tool has no subagents? (Copilot, Cursor…) Same discipline inline: the task prompt stays the contract, the diff review stays mandatory.</p>
+  <aside class="notes">9:00. Fresh context = no cross-task pollution and no mid-flight compaction. The controller stays strategic: coordination, review, next plan. The report contract forces the subagent to report instead of bluffing. Mention the inline degradation for other tools — important for the workshop half.</aside>
+</section>
+
+<section>
+  <p class="kicker">Why it works — 4/5</p>
+  <h2>ponytail: write less</h2>
+  <p style="font-size:.75em">The ladder, top down — stop at the first rung that holds:</p>
+  <p style="font-size:.72em"><code>real need? → already in the codebase? → stdlib? → platform? → already-installed dependency? → one line? → the minimum</code></p>
+  <ul>
+    <li>No speculative abstractions, no factory for one product</li>
+    <li>Deletion &gt; addition</li>
+    <li>Every deliberate shortcut is <strong>annotated</strong> (<code>ponytail:</code>) with its ceiling</li>
+  </ul>
+  <aside class="notes">10:30. I run it as an OpenCode plugin, but honestly: the essence fits in 10 lines in your skill. It's agent anti-pattern #1: the speculative factory. Models love writing factories "just in case". Those 10 lines are the best lines/value ratio in the whole file.</aside>
+</section>
+
+<section>
+  <p class="kicker">Why it works — 5/5</p>
+  <h2>tokenjuice: context is the budget</h2>
+  <ul>
+    <li>Command output truncated (head + tail), ANSI stripped, duplicates killed</li>
+    <li>Never re-reads a file already in context</li>
+    <li>Result: the controller session <strong>holds for hours without compaction</strong></li>
+  </ul>
+  <p style="font-size:.75em">This is what makes multi-subagent <em>economically viable</em>: a clean controller can orchestrate a whole day.</p>
+  <aside class="notes">11:30. Short slide, structural message: the subagent workflow is only profitable if the controller's context stays clean. tokenjuice does the housekeeping automatically on OpenCode. Elsewhere: be disciplined about what you let linger in the session.</aside>
+</section>
+
+<section>
+  <p class="kicker">Pedigree</p>
+  <h2>I invented nothing. I distilled.</h2>
+  <ul>
+    <li><strong>superpowers</strong> (obra) — 292k ★ — the full methodology: brainstorm, plans, subagent TDD, review</li>
+    <li><strong>ponytail</strong> (DietrichGebert) — methodical laziness</li>
+  </ul>
+  <p style="font-size:.8em">↓ distilled with a frontier model, in one session</p>
+  <p><span class="big-num">113</span> <span style="font-size:.8em">lines. That fit <em>me</em>.</span></p>
+  <ul style="font-size:.78em">
+    <li>The lesson: don't install the factory. <strong>Read, distill, own.</strong></li>
+    <li>Portability proof: <code>MIGRATING-TO-CLAUDE-CODE.md</code> — the migration doc is self-executing</li>
+  </ul>
+  <aside class="notes">12:30. superpowers installs on all 5 tools in this room — it's an excellent product, install it if you want the full version. But the workshop's argument: yours will fit you better, you'll know how to change it, and it costs 25 minutes. The Claude migration = a self-contained markdown. Zero debt.</aside>
+</section>
+
+<section>
+  <p class="kicker">Demo</p>
+  <h2>Two minutes, live</h2>
+  <ol style="font-size:.78em">
+    <li>"New task: add a /health endpoint" → it <strong>classifies</strong> (bounded), proposes a plan, <strong>stops</strong></li>
+    <li>"OK" → branch, TDD, commits, diff review on every task</li>
+    <li>Fresh test output + handoff → <strong>it waits</strong> for my validation</li>
+  </ol>
+  <aside class="notes">14:00. Live demo in OpenCode (throwaway git branch). Plan B if anything breaks: jump straight to the workshop — nothing breaks (the demo script is in the README to replay it). Stay within 2 minutes: show the two stops, that's all.</aside>
+</section>
+
+<!-- ══════════ PART 2 — THE WORKSHOP (25 min) ══════════ -->
+
+<section>
+  <p class="kicker">Part 2</p>
+  <h2>Your turn — 25 minutes, two files</h2>
+  <ul>
+    <li>You leave with: <strong>your workflow skill</strong> + <strong>one micro-skill</strong> for your stack</li>
+    <li>Materials: <code>exercise/template.md</code> · <code>exercise/example-micro-skill.md</code> · per-tool sheets in <code>exercise/per-tool/</code></li>
+    <li>Works on <strong>every</strong> tool you use — it's markdown</li>
+  </ul>
+  <p class="accent" style="font-size:.85em">Rule of the game: we test here. No "I'll do it tomorrow".</p>
+  <aside class="notes">16:00 — switch. Show the exercise/ folder and where to find it (shared repo). Announce the rhythm: 5 timed steps, I display the countdown. Walk the room; the per-tool sheets exist to kill all install friction.</aside>
+</section>
+
+<section class="step">
+  <span class="exercise-tag">Step 1</span>
+  <h2>Your three rules <span class="t">5 min</span></h2>
+  <ul>
+    <li>Open <code>exercise/template.md</code>, copy it into your tool (matching <code>per-tool/</code> sheet)</li>
+    <li>Your daily blowups → <strong>3 imperative rules</strong></li>
+  </ul>
+  <p class="muted" style="font-size:.72em">Examples: "never add a dependency without asking me" · "trace every caller before fixing" · "fresh tests before saying done"</p>
+  <aside class="notes">Step 1 — 16:30→21:30. The question to ask while walking around: "what did you rewrite to an agent this week?" — that's YOUR rule. Three maximum: a skill is not a manual, it's a manifesto.</aside>
+</section>
+
+<section class="step">
+  <span class="exercise-tag">Step 2</span>
+  <h2>Your two gates <span class="t">5 min</span></h2>
+  <ul>
+    <li>Where do <strong>you</strong> want to decide? Before code? before commit? before push?</li>
+    <li>Make the stop explicit: "<strong>STOP and wait for my OK</strong>"</li>
+    <li>Two gates is enough. Three = friction, one = Russian roulette.</li>
+  </ul>
+  <aside class="notes">Step 2 — 21:30→26:30. Gates are the most personal part: a careful backend dev will gate before push, frontend folks before touching the design system. Insist on the imperative wording of the stop — a wish ("ideally check with me") is not a gate.</aside>
+</section>
+
+<section class="step">
+  <span class="exercise-tag">Step 3</span>
+  <h2>Your build format <span class="t">5 min</span></h2>
+  <ul>
+    <li>Inline or subagents? (depends on your tool — both are defensible)</li>
+    <li>TDD: yes / no / "one runnable check for non-trivial logic"</li>
+    <li>Branches, commits: what minimum hygiene?</li>
+  </ul>
+  <p class="muted" style="font-size:.72em">Copilot / Cursor: inline mode or agent tasks · Claude / OpenCode: one subagent per task</p>
+  <aside class="notes">Step 3 — 26:30→31:30. No TDD dogma here: the honest minimal version is "one runnable check for non-trivial logic". What matters: "done" has a definition checkable by command.</aside>
+</section>
+
+<section class="step">
+  <span class="exercise-tag">Step 4</span>
+  <h2>The micro-skill <span class="t">7 min</span></h2>
+  <ul>
+    <li>Pick <strong>ONE</strong> technology you touch daily (React? Terraform? your CI?)</li>
+    <li>≈ 20 lines: house conventions, pitfalls, verification command</li>
+    <li>The <code>description</code> = the trigger — polish it more than the body</li>
+  </ul>
+  <p class="muted" style="font-size:.72em">This is the upgrade path: generic (workflow) → specific (tech). See <code>exercise/example-micro-skill.md</code></p>
+  <aside class="notes">Step 4 — 31:30→38:30. The centerpiece of the exercise: THIS is where they realize "making a skill" = 20 lines of conventions they've carried in their head for years. Read the React example aloud if the room stalls. Good triggers: "whenever we touch src/components", "whenever a migration is involved".</aside>
+</section>
+
+<section class="step">
+  <span class="exercise-tag">Step 5</span>
+  <h2>Test — now <span class="t">3 min</span></h2>
+  <ol>
+    <li>New session in your tool</li>
+    <li>One real mini-task: "new task: …"</li>
+    <li>The agent must stop at the first gate. Otherwise → rewrite the <code>description</code></li>
+  </ol>
+  <p class="accent" style="font-size:.8em">An untested skill doesn't exist.</p>
+  <aside class="notes">Step 5 — 38:30→41:30. The test IS the product. 90% of "my skill doesn't work" = a vague description. Rewrite two descriptions live, comparing before/after — guaranteed immediate effect.</aside>
+</section>
+
+<section>
+  <p class="kicker">Recap sheet</p>
+  <h2>What makes a good skill</h2>
+  <ul>
+    <li><strong>The description is the trigger</strong> — it's what the model reads to decide to load</li>
+    <li>Imperative, measurable, no prose</li>
+    <li>&lt; ~150 lines — otherwise split into two skills</li>
+    <li>Tested on a real task, in a real session</li>
+  </ul>
+  <aside class="notes">41:30. 30-second recap while they finish testing. Move straight to multi-tool.</aside>
+</section>
+
+<section>
+  <p class="kicker">Multi-tool</p>
+  <h2>One file, five tools</h2>
+  <table class="tools">
+    <tr><th>Tool</th><th>Triggered skill (recommended)</th><th>Always on</th></tr>
+    <tr><td>OpenCode</td><td><code>~/.config/opencode/skills/&lt;name&gt;/SKILL.md</code></td><td><code>AGENTS.md</code></td></tr>
+    <tr><td>Claude Code</td><td><code>~/.claude/skills/&lt;name&gt;/SKILL.md</code></td><td><code>CLAUDE.md</code></td></tr>
+    <tr><td>Cursor</td><td><code>.cursor/rules/&lt;name&gt;.mdc</code> <code>alwaysApply: false</code></td><td><code>.mdc alwaysApply: true</code> · <code>AGENTS.md</code></td></tr>
+    <tr><td>Copilot</td><td><code>.github/instructions/&lt;name&gt;.instructions.md</code> + <code>applyTo:</code></td><td><code>.github/copilot-instructions.md</code> · <code>AGENTS.md</code></td></tr>
+    <tr><td>Antigravity</td><td>skills <code>SKILL.md</code> / custom agents</td><td><code>AGENTS.md</code> · <code>.agents/rules/*.md</code></td></tr>
+  </table>
+  <p class="muted" style="font-size:.68em; margin-top:.8em">Trick: one <code>workflow.md</code> at the root, referenced by every tool — details in <code>exercise/per-tool/</code></p>
+  <aside class="notes">42:00. Key point for a multi-tool room: write ONCE, reference everywhere. AGENTS.md is the lowest common denominator (Cursor, Copilot, Antigravity, OpenCode). The detailed sheets are in the folder — don't read the table, show it.</aside>
+</section>
+
+<section class="title-slide">
+  <h1>The next one will cost you 15 minutes.</h1>
+  <p class="sub" style="font-size:.75em">You'll never write "make a plan first" again.<br>Your process will have done it.</p>
+  <p class="meta">Debrief: who reads theirs in 3 lines?<br><span class="muted">repo: level-up-your-skills · template · per-tool sheets · this workshop</span></p>
+  <aside class="notes">43:00→45:00. Have 2-3 people read their skill aloud (pick volunteers who finished step 5). Close on the kept promise: everyone has a tested skill in THEIR tool. Last reflex to sell: the next skill will be easier than the first — it's a muscle.</aside>
+</section>
+
+</div></div>
+
+<script src="../reveal/reveal.js"></script>
+<script src="../reveal/plugin/markdown.js"></script>
+<script src="../reveal/plugin/highlight.js"></script>
+<script src="../reveal/plugin/notes.js"></script>
+<script>
+Reveal.initialize({
+  width: 1280, height: 720, margin: 0.05,
+  hash: true, slideNumber: true,
+  transition: 'slide',
+  plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+});
+</script>
+</body>
+</html>

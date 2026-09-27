@@ -2,6 +2,7 @@
 
 Atelier 45 min : 20 min de présentation de la stack `/workflow` + ponytail + tokenjuice,
 25 min pour que chacun construise son propre skill workflow + un micro-skill.
+Version anglaise : dossier `en/`.
 
 ## Ouvrir les slides
 
