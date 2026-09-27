@@ -31,3 +31,7 @@ Phases dans l'ordre. Annonce la phase en cours. Ne saute jamais en avant.
 1. <!-- (règle 1 — votre pétage de plomb quotidien) -->
 2. <!-- (règle 2) -->
 3. <!-- (règle 3) -->
+
+## Gate de complétion
+
+- [ ] Testé : nouvelle session, tâche réelle, l'agent s'est arrêté à la première gate.

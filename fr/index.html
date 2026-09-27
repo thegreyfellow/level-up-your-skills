@@ -52,13 +52,13 @@
 <body>
 <div class="reveal"><div class="slides">
 
-<!-- ══════════ PARTIE 1 — PRÉSENTER (20 min) ══════════ -->
+<!-- ══════════ PARTIE 1 — PRÉSENTER (16 min démo incluse) ══════════ -->
 
 <section class="title-slide">
   <h1>Level Up Your Skills</h1>
   <p class="sub">Construisez le skill qui fait travailler vos agents <em>comme vous</em></p>
-  <p class="meta">Atelier · 45 min · ½ démo, ½ vous codez (du markdown)<br>Cursor · Copilot · Antigravity · Claude Code · OpenCode</p>
-  <aside class="notes">0:00 — 30 s. Qui je suis. Annonce du contrat : 20 min je vous montre ma stack, 25 min vous écrivez la vôtre et vous repartez avec deux fichiers utilisables dans VOTRE outil. Insister : aucun des fichiers d'aujourd'hui n'est spécifique à un outil — c'est du markdown.</aside>
+  <p class="meta">Atelier · 45 min · 16 min stack + démo · 25 min vous construisez · 4 min débrief<br>Cursor · Copilot · Antigravity · Claude Code · OpenCode</p>
+  <aside class="notes">0:00 — 30 s. Qui je suis. Annonce du contrat : 16 min je vous montre ma stack + une démo, 25 min vous écrivez la vôtre (deux fichiers utilisables pour VOTRE outil), 4 min de débrief. Insister : aucun des fichiers d'aujourd'hui n'est spécifique à un outil — c'est du markdown. Rappel avant la session (email / invitation agenda) : outil installé et fonctionnel AVANT d'entrer — on teste en direct à l'étape 5.</aside>
 </section>
 
 <section>
@@ -106,8 +106,8 @@
       <p>Hygiène du contexte : tronque les sorties, tue les doublons. La session tient des heures sans compaction.</p>
     </div>
   </div>
-  <p class="muted" style="font-size:.62em; margin-top:1em">workflow + ponytail = du markdown, portable partout · tokenjuice = extension OpenCode (le luxe)</p>
-  <aside class="notes">3:00. Les trois couches : le processus, les garde-fous, l'économie de contexte. Les deux premières sont du markdown → utilisables dans les 5 outils de la salle. La troisième est spécifique OpenCode, je la montre pour la culture. Ensuite on zoome sur /workflow.</aside>
+  <p class="muted" style="font-size:.62em; margin-top:1em">workflow + ponytail = du markdown, portable partout · tokenjuice = s'installe sur les 5 outils de la salle (4 stables, 1 en bêta)</p>
+  <aside class="notes">3:00. Les trois couches : le processus, les garde-fous, l'économie de contexte. Les deux premières sont du markdown → utilisables dans les 5 outils de la salle. La troisième s'installe aussi sur les cinq : Claude Code, Cursor, Copilot, OpenCode — stables ; Antigravity — en bêta. Ensuite on zoome sur /workflow.</aside>
 </section>
 
 <section>
@@ -169,7 +169,7 @@
     <li>Seuils : 3 tours de fix → modèle plus fort · 5 → re-plan · ~150 lignes → re-approbation</li>
   </ul>
   <p class="muted" style="font-size:.72em">Votre outil n'a pas de subagents ? (Copilot, Cursor…) Même discipline en inline : le prompt de tâche reste le contrat, la revue du diff reste obligatoire.</p>
-  <aside class="notes">9:00. Contexte frais = pas de pollution croisée entre tâches et pas de compaction en cours de route. Le contrôleur reste stratégique : coordination, revue, prochain plan. Le contrat de rapport force le subagent à signaler au lieu de bluffer. Mentionner la dégradation inline pour les autres outils — important pour la moitié atelier.</aside>
+  <aside class="notes">9:00. Contexte frais = pas de pollution croisée entre tâches et pas de compaction en cours de route. Le contrôleur reste stratégique : coordination, revue, prochain plan. Le contrat de rapport force le subagent à signaler au lieu de bluffer. Mentionner la dégradation inline pour les autres outils — important pour le bloc atelier.</aside>
 </section>
 
 <section>
@@ -182,7 +182,7 @@
     <li>Déletion &gt; addition</li>
     <li>Chaque racourci assumé est <strong>annoté</strong> (<code>ponytail:</code>) avec son plafond</li>
   </ul>
-  <aside class="notes">10:30. Je l'ai en plugin OpenCode, mais honnêtement : l'essentiel tient en 10 lignes dans votre skill. C'est l'anti-pattern n°1 des agents : l'usine à gaz spéculative. Le modèle adore écrire des factories « au cas où ». Ces 10 lignes là sont le meilleur ratio lignes/valeur de tout le fichier.</aside>
+  <aside class="notes">10:30. Je l'ai en plugin OpenCode, mais honnêtement : l'essentiel tient en 10 lignes dans votre skill. C'est l'anti-pattern n°1 des agents : l'usine à gaz spéculative. Le modèle adore écrire des factories « au cas où ». Ces 10 lignes là sont le meilleur ratio lignes/valeur de tout le fichier. ⏱ En retard ? Cette slide et la suivante (tokenjuice) se compressent à ~30 s chacune — jamais le trio gates/classification/build avant elles.</aside>
 </section>
 
 <section>
@@ -194,7 +194,8 @@
     <li>Résultat : la session contrôleur <strong>tient des heures sans compaction</strong></li>
   </ul>
   <p style="font-size:.75em">C'est ce qui rend le multi-subagents <em>viable économiquement</em> : un contrôleur propre peut orchestrer toute une journée.</p>
-  <aside class="notes">11:30. Slide courte, message structurel : le workflow à subagents n'est rentable que si le contexte du contrôleur reste propre. tokenjuice fait le ménage automatiquement côté OpenCode. Ailleurs : soyez disciplinés sur ce que vous laissez traîner dans la session.</aside>
+  <p class="muted" style="font-size:.68em">S'installe sur les cinq outils de la salle — <code>tokenjuice install claude-code | cursor | copilot-cli | vscode-copilot | opencode</code> (stable) · <code>antigravity</code> (bêta)</p>
+  <aside class="notes">11:30. Slide courte, message structurel : le workflow à subagents n'est rentable que si le contexte du contrôleur reste propre. tokenjuice fait le ménage automatiquement — un cœur partagé, des hooks fins par outil. Démo live si on demande : <code>tokenjuice --version && tokenjuice ls</code> — PAS d'install en direct, ça réécrit les fichiers de config de l'outil en pleine présentation.</aside>
 </section>
 
 <section>
@@ -208,9 +209,9 @@
   <p><span class="big-num">113</span> <span style="font-size:.8em">lignes. Qui me vont <em>à moi</em>.</span></p>
   <ul style="font-size:.78em">
     <li>La leçon : n'installez pas la usine à gaz. <strong>Lisez, distillez, possédez.</strong></li>
-    <li>Preuve de portabilité : <code>MIGRATING-TO-CLAUDE-CODE.md</code> — le doc de migration est auto-exécutable</li>
+    <li>Du markdown pur, zéro dépendance — le même fichier tourne dans tous les outils de cette salle</li>
   </ul>
-  <aside class="notes">12:30. superpowers s'installe sur les 5 outils de la salle — c'est un excellent produit, installez-le si vous voulez la version complète. Mais l'argument de l'atelier : le vôtre vous ira mieux, vous saurez le modifier, et il coûte 25 minutes. La migration Claude = un markdown qui se suffit à lui-même. Zéro dette.</aside>
+  <aside class="notes">12:30. superpowers s'installe sur les 5 outils de la salle — c'est un excellent produit, installez-le si vous voulez la version complète. Mais l'argument de l'atelier : le vôtre vous ira mieux, vous saurez le modifier, et il coûte 25 minutes. Même fichier, tous les outils — zéro dette.</aside>
 </section>
 
 <section>
@@ -293,7 +294,7 @@
     <li>L'agent doit s'arrêter à la première gate. Sinon → c'est la <code>description</code> qu'il faut réécrire</li>
   </ol>
   <p class="accent" style="font-size:.8em">Un skill non testé n'existe pas.</p>
-  <aside class="notes">Étape 5 — 38:30→41:30. Le test, c'est le produit. 90 % des « mon skill ne marche pas » = une description vague. Faire réécrire deux descriptions en direct, en comparant avant/après — effet immédiat garanti.</aside>
+  <aside class="notes">Étape 5 — 38:30→41:30. Le test, c'est le produit. 90 % des « mon skill ne marche pas » = une description vague. Faire réécrire deux descriptions en direct, en comparant avant/après — effet immédiat garanti. Plan B si un outil ne répond pas (wifi capricieux, trial/quota mort) : jumeler la personne avec un voisin — elle lit le skill du voisin, aide à affiner sa description, et teste le sien dès que son outil revient. Personne ne reste inactif.</aside>
 </section>
 
 <section>

@@ -1,7 +1,7 @@
 # Level Up Your Skills
 
-Atelier 45 min : 20 min de présentation de la stack `/workflow` + ponytail + tokenjuice,
-25 min pour que chacun construise son propre skill workflow + un micro-skill.
+Atelier 45 min : 16 min de présentation de la stack `/workflow` + ponytail + tokenjuice + une démo en direct,
+25 min pour que chacun construise son propre skill workflow + un micro-skill, 4 min de débrief.
 Version anglaise : dossier `../en/`.
 
 ## Ouvrir les slides
