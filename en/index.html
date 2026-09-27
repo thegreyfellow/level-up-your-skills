@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <title>Level Up Your Skills — build your main skill</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../reveal/reveal.css">
-<link rel="stylesheet" href="../reveal/theme/white.css" id="theme">
-<link rel="stylesheet" href="../reveal/plugin/highlight/monokai.css">
+<link rel="stylesheet" href="../vendor/reveal/reveal.css">
+<link rel="stylesheet" href="../vendor/reveal/theme/white.css" id="theme">
+<link rel="stylesheet" href="../vendor/reveal/plugin/highlight/monokai.css">
 <style>
   :root { --accent: #b3261e; --ink: #1a1a1a; --soft: #666; }
   .reveal { font-family: "Inter", "Segoe UI", system-ui, sans-serif; font-size: 30px; color: var(--ink); }
@@ -229,7 +229,7 @@
   <h2>Your turn — 25 minutes, two files</h2>
   <ul>
     <li>You leave with: <strong>your workflow skill</strong> + <strong>one micro-skill</strong> for your stack</li>
-    <li>Materials: <code>exercise/template.md</code> · <code>exercise/example-micro-skill.md</code> · per-tool sheets in <code>exercise/per-tool/</code></li>
+    <li>Materials: <code>en/exercise/template.md</code> · <code>en/exercise/example-micro-skill.md</code> · per-tool sheets in <code>en/exercise/per-tool/</code></li>
     <li>Works on <strong>every</strong> tool you use — it's markdown</li>
   </ul>
   <p class="accent" style="font-size:.85em">Rule of the game: we test here. No "I'll do it tomorrow".</p>
@@ -240,7 +240,7 @@
   <span class="exercise-tag">Step 1</span>
   <h2>Your three rules <span class="t">5 min</span></h2>
   <ul>
-    <li>Open <code>exercise/template.md</code>, copy it into your tool (matching <code>per-tool/</code> sheet)</li>
+    <li>Open <code>en/exercise/template.md</code>, copy it into your tool (matching <code>per-tool/</code> sheet)</li>
     <li>Your daily blowups → <strong>3 imperative rules</strong></li>
   </ul>
   <p class="muted" style="font-size:.72em">Examples: "never add a dependency without asking me" · "trace every caller before fixing" · "fresh tests before saying done"</p>
@@ -278,7 +278,7 @@
     <li>≈ 20 lines: house conventions, pitfalls, verification command</li>
     <li>The <code>description</code> = the trigger — polish it more than the body</li>
   </ul>
-  <p class="muted" style="font-size:.72em">This is the upgrade path: generic (workflow) → specific (tech). See <code>exercise/example-micro-skill.md</code></p>
+  <p class="muted" style="font-size:.72em">This is the upgrade path: generic (workflow) → specific (tech). See <code>en/exercise/example-micro-skill.md</code></p>
   <aside class="notes">Step 4 — 31:30→38:30. The centerpiece of the exercise: THIS is where they realize "making a skill" = 20 lines of conventions they've carried in their head for years. Read the React example aloud if the room stalls. Good triggers: "whenever we touch src/components", "whenever a migration is involved".</aside>
 </section>
 
@@ -317,7 +317,7 @@
     <tr><td>Copilot</td><td><code>.github/instructions/&lt;name&gt;.instructions.md</code> + <code>applyTo:</code></td><td><code>.github/copilot-instructions.md</code> · <code>AGENTS.md</code></td></tr>
     <tr><td>Antigravity</td><td>skills <code>SKILL.md</code> / custom agents</td><td><code>AGENTS.md</code> · <code>.agents/rules/*.md</code></td></tr>
   </table>
-  <p class="muted" style="font-size:.68em; margin-top:.8em">Trick: one <code>workflow.md</code> at the root, referenced by every tool — details in <code>exercise/per-tool/</code></p>
+  <p class="muted" style="font-size:.68em; margin-top:.8em">Trick: one <code>workflow.md</code> at the root, referenced by every tool — details in <code>en/exercise/per-tool/</code></p>
   <aside class="notes">42:00. Key point for a multi-tool room: write ONCE, reference everywhere. AGENTS.md is the lowest common denominator (Cursor, Copilot, Antigravity, OpenCode). The detailed sheets are in the folder — don't read the table, show it.</aside>
 </section>
 
@@ -330,10 +330,10 @@
 
 </div></div>
 
-<script src="../reveal/reveal.js"></script>
-<script src="../reveal/plugin/markdown.js"></script>
-<script src="../reveal/plugin/highlight.js"></script>
-<script src="../reveal/plugin/notes.js"></script>
+<script src="../vendor/reveal/reveal.js"></script>
+<script src="../vendor/reveal/plugin/markdown.js"></script>
+<script src="../vendor/reveal/plugin/highlight.js"></script>
+<script src="../vendor/reveal/plugin/notes.js"></script>
 <script>
 Reveal.initialize({
   width: 1280, height: 720, margin: 0.05,

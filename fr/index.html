@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <title>Level Up Your Skills — construisez votre skill principal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="reveal/reveal.css">
-<link rel="stylesheet" href="reveal/theme/white.css" id="theme">
-<link rel="stylesheet" href="reveal/plugin/highlight/monokai.css">
+<link rel="stylesheet" href="../vendor/reveal/reveal.css">
+<link rel="stylesheet" href="../vendor/reveal/theme/white.css" id="theme">
+<link rel="stylesheet" href="../vendor/reveal/plugin/highlight/monokai.css">
 <style>
   :root { --accent: #b3261e; --ink: #1a1a1a; --soft: #666; }
   .reveal { font-family: "Inter", "Segoe UI", system-ui, sans-serif; font-size: 30px; color: var(--ink); }
@@ -231,7 +231,7 @@
   <h2>À vous — 25 minutes, deux fichiers</h2>
   <ul>
     <li>Vous repartez avec : <strong>votre skill workflow</strong> + <strong>un micro-skill</strong> de votre techno</li>
-    <li>Supports : <code>exercice/template.md</code> · <code>exercice/exemple-micro-skill.md</code> · fiches par outil dans <code>exercice/par-outil/</code></li>
+    <li>Supports : <code>fr/exercice/template.md</code> · <code>fr/exercice/exemple-micro-skill.md</code> · fiches par outil dans <code>fr/exercice/par-outil/</code></li>
     <li>Ça marche sur <strong>tous</strong> vos outils — c'est du markdown</li>
   </ul>
   <p class="accent" style="font-size:.85em">Règle du jeu : on teste ici. Pas « je le ferai demain ».</p>
@@ -242,7 +242,7 @@
   <span class="exercise-tag">Étape 1</span>
   <h2>Vos trois règles <span class="t">5 min</span></h2>
   <ul>
-    <li>Ouvrez <code>exercice/template.md</code>, recopiez-le dans votre outil (fiche <code>par-outil/</code> correspondante)</li>
+    <li>Ouvrez <code>fr/exercice/template.md</code>, recopiez-le dans votre outil (fiche <code>par-outil/</code> correspondante)</li>
     <li>Vos pétages de plomb quotidiens → <strong>3 règles impératives</strong></li>
   </ul>
   <p class="muted" style="font-size:.72em">Exemples : « jamais de dépendance sans me demander » · « trace tous les appelants avant de fixer » · « tests frais avant de dire fini »</p>
@@ -280,7 +280,7 @@
     <li>≈ 20 lignes : conventions maison, pièges, commande de vérification</li>
     <li>La <code>description</code> = le déclencheur — soignez-la plus que le corps</li>
   </ul>
-  <p class="muted" style="font-size:.72em">C'est la mise à niveau : générique (workflow) → spécifique (techno). Cf. <code>exercice/exemple-micro-skill.md</code></p>
+  <p class="muted" style="font-size:.72em">C'est la mise à niveau : générique (workflow) → spécifique (techno). Cf. <code>fr/exercice/exemple-micro-skill.md</code></p>
   <aside class="notes">Étape 4 — 31:30→38:30. La pièce maîtresse de l'exercice : c'est LÀ qu'ils réalisent que « faire un skill » = 20 lignes de conventions qu'ils ont dans la tête depuis des années. Faire lire l'exemple react à voix haute si la salle cale. Les bons déclencheurs : « dès qu'on touche à src/components », « dès qu'une migration est impliquée ».</aside>
 </section>
 
@@ -319,7 +319,7 @@
     <tr><td>Copilot</td><td><code>.github/instructions/&lt;nom&gt;.instructions.md</code> + <code>applyTo:</code></td><td><code>.github/copilot-instructions.md</code> · <code>AGENTS.md</code></td></tr>
     <tr><td>Antigravity</td><td>skills <code>SKILL.md</code> / custom agents</td><td><code>AGENTS.md</code> · <code>.agents/rules/*.md</code></td></tr>
   </table>
-  <p class="muted" style="font-size:.68em; margin-top:.8em">Astuce : un seul <code>workflow.md</code> à la racine, référencé par chaque outil — détails dans <code>exercice/par-outil/</code></p>
+  <p class="muted" style="font-size:.68em; margin-top:.8em">Astuce : un seul <code>workflow.md</code> à la racine, référencé par chaque outil — détails dans <code>fr/exercice/par-outil/</code></p>
   <aside class="notes">42:00. Le point clé pour une salle multi-outils : écrivez UNE fois, référencez partout. AGENTS.md est le plus petit dénominateur commun (Cursor, Copilot, Antigravity, OpenCode). Les fiches détaillées sont dans le dossier — ne pas lire la table, la montrer.</aside>
 </section>
 
@@ -332,10 +332,10 @@
 
 </div></div>
 
-<script src="reveal/reveal.js"></script>
-<script src="reveal/plugin/markdown.js"></script>
-<script src="reveal/plugin/highlight.js"></script>
-<script src="reveal/plugin/notes.js"></script>
+<script src="../vendor/reveal/reveal.js"></script>
+<script src="../vendor/reveal/plugin/markdown.js"></script>
+<script src="../vendor/reveal/plugin/highlight.js"></script>
+<script src="../vendor/reveal/plugin/notes.js"></script>
 <script>
 Reveal.initialize({
   width: 1280, height: 720, margin: 0.05,

@@ -3,7 +3,7 @@
 45-min workshop: 20 min presenting the `/workflow` + ponytail + tokenjuice stack,
 25 min for everyone to build their own workflow skill + a micro-skill.
 
-The French original lives at the repo root (`index.html`, `exercice/`).
+The French original lives in `../fr/`.
 
 ## Open the slides
 
@@ -19,7 +19,7 @@ xdg-open en/index.html        # works offline, reveal.js is vendored
 - `exercise/template.md` — the workflow skill to fill in during the workshop
 - `exercise/example-micro-skill.md` — tech micro-skill example (React)
 - `exercise/per-tool/` — one sheet per tool: opencode, claude-code, cursor, copilot, antigravity
-- `../reveal/` — reveal.js 6.0.2 (MIT), vendored to run offline
+- `../vendor/reveal/` — reveal.js 6.0.2 (MIT), shared with the French deck, vendored to run offline
 
 ## Demo script (slide 12)
 
