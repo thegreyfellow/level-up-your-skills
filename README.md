@@ -5,8 +5,12 @@ Build the main skill that makes your agents work like you.
 
 | Langue | Slides | Exercices |
 |---|---|---|
-| Français (original) | `xdg-open fr/index.html` | `fr/exercice/` |
-| English | `xdg-open en/index.html` | `en/exercise/` |
+| Landing page | `node server.js` → http://localhost:3000 | — |
+| Français (original) | `fr/index.html` | `fr/exercice/` |
+| English | `en/index.html` | `en/exercise/` |
+
+- `node server.js [port]` sert la page d'accueil et les deux decks (zéro dépendance, Node stdlib uniquement).
+- Sans node : double-cliquez sur `index.html` — la landing et les decks fonctionnent aussi en `file://`.
 
 - Fonctionne hors-ligne : reveal.js 6.0.2 est incluse dans `vendor/reveal/` (MIT).
 - Notes présentateur : touche `S` — timing sur chaque slide.
