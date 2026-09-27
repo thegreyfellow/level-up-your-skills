@@ -50,13 +50,13 @@
 <body>
 <div class="reveal"><div class="slides">
 
-<!-- ══════════ PART 1 — PRESENTING (20 min) ══════════ -->
+<!-- ══════════ PART 1 — PRESENTING (16 min incl. demo) ══════════ -->
 
 <section class="title-slide">
   <h1>Level Up Your Skills</h1>
   <p class="sub">Build the skill that makes your agents work <em>like you</em></p>
-  <p class="meta">Workshop · 45 min · ½ demo, ½ you write code (markdown)<br>Cursor · Copilot · Antigravity · Claude Code · OpenCode</p>
-  <aside class="notes">0:00 — 30 s. Who I am. State the deal: 20 min I show you my stack, 25 min you write yours and leave with two usable files for YOUR tool. Hammer the point: nothing we build today is tool-specific — it's markdown.</aside>
+  <p class="meta">Workshop · 45 min · 16 min stack + demo · 25 min you build · 4 min debrief<br>Cursor · Copilot · Antigravity · Claude Code · OpenCode</p>
+  <aside class="notes">0:00 — 30 s. Who I am. State the deal: 16 min I show you my stack + a demo, 25 min you write yours (two usable files for YOUR tool), 4 min debrief. Hammer the point: nothing we build today is tool-specific — it's markdown. Pre-session reminder (email / calendar invite): have your tool installed and responding BEFORE walking in — we test live in step 5.</aside>
 </section>
 
 <section>
@@ -167,7 +167,7 @@
     <li>Thresholds: 3 fix rounds → stronger model · 5 → re-plan · ~150 lines → re-approval</li>
   </ul>
   <p class="muted" style="font-size:.72em">Your tool has no subagents? (Copilot, Cursor…) Same discipline inline: the task prompt stays the contract, the diff review stays mandatory.</p>
-  <aside class="notes">9:00. Fresh context = no cross-task pollution and no mid-flight compaction. The controller stays strategic: coordination, review, next plan. The report contract forces the subagent to report instead of bluffing. Mention the inline degradation for other tools — important for the workshop half.</aside>
+  <aside class="notes">9:00. Fresh context = no cross-task pollution and no mid-flight compaction. The controller stays strategic: coordination, review, next plan. The report contract forces the subagent to report instead of bluffing. Mention the inline degradation for other tools — important for the workshop block.</aside>
 </section>
 
 <section>
@@ -180,7 +180,7 @@
     <li>Deletion &gt; addition</li>
     <li>Every deliberate shortcut is <strong>annotated</strong> (<code>ponytail:</code>) with its ceiling</li>
   </ul>
-  <aside class="notes">10:30. I run it as an OpenCode plugin, but honestly: the essence fits in 10 lines in your skill. It's agent anti-pattern #1: the speculative factory. Models love writing factories "just in case". Those 10 lines are the best lines/value ratio in the whole file.</aside>
+  <aside class="notes">10:30. I run it as an OpenCode plugin, but honestly: the essence fits in 10 lines in your skill. It's agent anti-pattern #1: the speculative factory. Models love writing factories "just in case". Those 10 lines are the best lines/value ratio in the whole file. ⏱ Behind schedule? This slide and the next (tokenjuice) compress to ~30 s each — never the gates/classification/build trio before them.</aside>
 </section>
 
 <section>
@@ -192,8 +192,8 @@
     <li>Result: the controller session <strong>holds for hours without compaction</strong></li>
   </ul>
   <p style="font-size:.75em">This is what makes multi-subagent <em>economically viable</em>: a clean controller can orchestrate a whole day.</p>
-  <p class="muted" style="font-size:.68em">Installs on all five tools in this room — Claude Code, Cursor, Copilot, OpenCode (stable), Antigravity (beta): <code>tokenjuice install &lt;tool&gt;</code></p>
-  <aside class="notes">11:30. Short slide, structural message: the subagent workflow is only profitable if the controller's context stays clean. tokenjuice does the housekeeping automatically — one shared core, thin hooks per tool (tokenjuice install claude-code | cursor | copilot-cli | vscode-copilot | opencode, Antigravity in beta). Show the install command live if someone asks.</aside>
+  <p class="muted" style="font-size:.68em">Installs on all five tools in this room — <code>tokenjuice install claude-code | cursor | copilot-cli | vscode-copilot | opencode</code> (stable) · <code>antigravity</code> (beta)</p>
+  <aside class="notes">11:30. Short slide, structural message: the subagent workflow is only profitable if the controller's context stays clean. tokenjuice does the housekeeping automatically — one shared core, thin hooks per tool. If someone asks for a live demo: `tokenjuice --version && tokenjuice ls` — NOT a live install, it rewrites that tool's config files mid-talk.</aside>
 </section>
 
 <section>
@@ -292,7 +292,7 @@
     <li>The agent must stop at the first gate. Otherwise → rewrite the <code>description</code></li>
   </ol>
   <p class="accent" style="font-size:.8em">An untested skill doesn't exist.</p>
-  <aside class="notes">Step 5 — 38:30→41:30. The test IS the product. 90% of "my skill doesn't work" = a vague description. Rewrite two descriptions live, comparing before/after — guaranteed immediate effect.</aside>
+  <aside class="notes">Step 5 — 38:30→41:30. The test IS the product. 90% of "my skill doesn't work" = a vague description. Rewrite two descriptions live, comparing before/after — guaranteed immediate effect. Fallback if a tool doesn't respond (wifi hiccup, dead trial/quota): pair the attendee with a neighbor — they read the neighbor's skill and help sharpen its description, and test their own the moment their tool is back. Nobody idles.</aside>
 </section>
 
 <section>

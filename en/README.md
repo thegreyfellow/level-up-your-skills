@@ -1,7 +1,7 @@
 # Level Up Your Skills (English)
 
-45-min workshop: 20 min presenting the `/workflow` + ponytail + tokenjuice stack,
-25 min for everyone to build their own workflow skill + a micro-skill.
+45-min workshop: 16 min presenting the `/workflow` + ponytail + tokenjuice stack + a live demo,
+25 min for everyone to build their own workflow skill + a micro-skill, 4 min debrief.
 
 The French original lives in `../fr/`.
 

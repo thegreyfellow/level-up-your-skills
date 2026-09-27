@@ -31,3 +31,7 @@ Phases in order. Announce the current phase. Never skip ahead.
 1. <!-- (rule 1 — your daily blowup) -->
 2. <!-- (rule 2) -->
 3. <!-- (rule 3) -->
+
+## Completion gate
+
+- [ ] Tested: new session, real task, the agent stopped at the first gate.
