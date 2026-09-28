@@ -214,13 +214,26 @@
 
 <section>
   <p class="kicker">Demo</p>
-  <h2>Two minutes, live</h2>
+  <h2>90 seconds, live</h2>
   <ol style="font-size:.78em">
     <li>"New task: add a /health endpoint" → it <strong>classifies</strong> (bounded), proposes a plan, <strong>stops</strong></li>
     <li>"OK" → branch, TDD, commits, diff review on every task</li>
     <li>Fresh test output + handoff → <strong>it waits</strong> for my validation</li>
   </ol>
-  <aside class="notes">14:00. Live demo in OpenCode (throwaway git branch). Plan B if anything breaks: jump straight to the workshop — nothing breaks (the demo script is in the README to replay it). Stay within 2 minutes: show the two stops, that's all.</aside>
+  <aside class="notes">14:00. Live demo in OpenCode (throwaway git branch). Plan B if anything breaks: jump straight to the workshop — nothing breaks (the demo script is in the README to replay it). Stay within 90 seconds: show the two stops, that's all.</aside>
+</section>
+
+<section>
+  <p class="kicker">Dogfooding</p>
+  <h2>Preparing this talk improved the skill</h2>
+  <p style="font-size:.8em">Building this workshop with my agent surfaced real gaps in <code>/workflow</code>. The next changes I'd make:</p>
+  <ul>
+    <li><strong>The plan graduates to a file</strong> — once a second task consumes another's interfaces, the plan goes to <code>docs/plans/&lt;slug&gt;.md</code>: shared state that survives context compaction</li>
+    <li><strong>"Never commit on main" becomes code, not prose</strong> — a 9-line git pre-commit hook that blocks, instead of asking nicely</li>
+    <li><strong>Dispatch protocol moves above branch hygiene</strong> — the most valuable half of phase 4 shouldn't sit below the fold</li>
+  </ul>
+  <p class="muted" style="font-size:.72em">A skill is a living document — using it is how you find its next version. Same as code.</p>
+  <aside class="notes">15:30 — 30 s. Transition into Part 2. The meta-message: this very talk was built with the skill, and that use exposed the next iteration. Read the three bullets fast, land the closing line, switch. (Demo shortened to 90 s to make room.)</aside>
 </section>
 
 <!-- ══════════ PART 2 — THE WORKSHOP (25 min) ══════════ -->

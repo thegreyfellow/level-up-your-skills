@@ -216,13 +216,26 @@
 
 <section>
   <p class="kicker">Démo</p>
-  <h2>Deux minutes, en vrai</h2>
+  <h2>90 secondes, en vrai</h2>
   <ol style="font-size:.78em">
     <li>« Nouvelle tâche : ajoute un endpoint /health » → il <strong>classifie</strong> (borné), propose un plan, <strong>s'arrête</strong></li>
     <li>« OK » → branche, TDD, commits, revue du diff à chaque tâche</li>
     <li>Sortie de tests fraîche + handoff → <strong>il attend</strong> ma validation</li>
   </ol>
-  <aside class="notes">14:00. Démo live OpenCode (branch git jetable). Plan B si panne : on passe directement à l'atelier — rien ne casse (le script de la démo est dans le README pour la rejouer). Rester dans les 2 minutes : montrer les deux arrêts, c'est tout.</aside>
+  <aside class="notes">14:00. Démo live OpenCode (branch git jetable). Plan B si panne : on passe directement à l'atelier — rien ne casse (le script de la démo est dans le README pour la rejouer). Rester dans les 90 secondes : montrer les deux arrêts, c'est tout.</aside>
+</section>
+
+<section>
+  <p class="kicker">Dogfooding</p>
+  <h2>Préparer cet atelier a amélioré le skill</h2>
+  <p style="font-size:.8em">Construire cette présentation avec mon agent a fait remonter des manques réels dans <code>/workflow</code>. Les prochaines modifications que j'y apporterais :</p>
+  <ul>
+    <li><strong>Le plan passe dans un fichier</strong> — dès qu'une seconde tâche consomme les interfaces d'une autre, le plan va dans <code>docs/plans/&lt;slug&gt;.md</code> : un état partagé qui survit à la compaction</li>
+    <li><strong>« Jamais de commit sur main » passe de la prose au code</strong> — un hook git pre-commit de 9 lignes qui bloque, au lieu d'une demande polie</li>
+    <li><strong>Le protocole de dispatch remonte au début de la phase 4</strong> — la partie la plus précieuse ne doit pas rester sous le pli</li>
+  </ul>
+  <p class="muted" style="font-size:.72em">Un skill est un document vivant — c'est en l'utilisant qu'on découvre sa prochaine version. Comme pour le code.</p>
+  <aside class="notes">15:30 — 30 s. Transition vers la partie 2. Le méta-message : cet atelier a été construit avec le skill, et cet usage a révélé la prochaine itération. Lire les trois points vite, poser la phrase de fin, basculer. (Démo raccourcie à 90 s pour faire de la place.)</aside>
 </section>
 
 <!-- ══════════ PARTIE 2 — L'ATELIER (25 min) ══════════ -->
