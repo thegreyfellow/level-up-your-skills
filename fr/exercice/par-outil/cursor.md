@@ -13,7 +13,7 @@ alwaysApply: false
 ```
 
 - `alwaysApply: false` + une bonne `description` → Cursor l'injecte quand c'est pertinent (mode Agent).
-- Le micro-skill techno : un second `.mdc`, ou une règle scoping sur les fichiers :
+- Le micro-skill techno : un second `.mdc`, ou une règle ciblée sur certains fichiers :
 
 ```
 ---

@@ -82,7 +82,7 @@
     <li>Chargé <strong>au bon moment</strong> par l'outil que vous utilisez déjà</li>
     <li>Versionnable, diffable, partageable — comme du code</li>
   </ul>
-  <p class="muted" style="font-size:.7em">Vous êtes développeurs : votre process mérite un repo, pas des post-its dans un chat.</p>
+  <p class="muted" style="font-size:.7em">Vous êtes développeurs : votre processus mérite un repo, pas des post-its dans un chat.</p>
   <aside class="notes">2:00. Vocabulaire : selon l'outil ça s'appelle skill, rules ou instructions — même principe, du texte injecté dans le contexte au bon moment. Le « bon moment », c'est la <em>description</em> : c'est elle que le modèle lit pour décider de charger le skill. On y reviendra, c'est le point n°1 de qualité.</aside>
 </section>
 
@@ -98,7 +98,7 @@
     <div class="card">
       <div class="cmd">ponytail</div>
       <div class="role">le combien peu</div>
-      <p>Anti-sur-ingénierie : plus petit diff, stdlib d'abord, YAGNI. Le meilleur code est celui jamais écrit.</p>
+      <p>Anti-sur-ingénierie : plus petit diff, stdlib d'abord, YAGNI. Le meilleur code est celui qu'on n'écrit jamais.</p>
     </div>
     <div class="card">
       <div class="cmd">tokenjuice</div>
@@ -153,7 +153,7 @@
   </ul>
   <ul style="font-size:.8em">
     <li>Le cliquet est à sens seul : la complexité cachée fait monter, jamais descendre</li>
-    <li>« Trop simple pour un design » <strong>n'existe pas</strong> — un design peut faire 2 phrases</li>
+    <li>« Trop simple pour un design » <strong>n'existe pas</strong> — un design peut tenir en 2 phrases</li>
     <li>« X le couvre déjà » est une fin <strong>valide</strong></li>
   </ul>
   <aside class="notes">7:30. La classification évite les deux pathologies : sur-traiter une petite tâche (cérémonie inutile) et sous-traiter une grosse (l'agent fonce sur 3 fichiers). Le cliquet protège contre la complexité cachée découverte en route. Et non, tout doit passer par un design — même de deux phrases. C'est ça qui tue le « trop simple pour… ».</aside>
@@ -179,8 +179,8 @@
   <p style="font-size:.72em"><code>besoin réel ? → déjà dans le code ? → stdlib ? → plateforme ? → dépendance déjà installée ? → une ligne ? → le minimum</code></p>
   <ul>
     <li>Pas d'abstraction spéculative, pas de factory pour un produit</li>
-    <li>Déletion &gt; addition</li>
-    <li>Chaque racourci assumé est <strong>annoté</strong> (<code>ponytail:</code>) avec son plafond</li>
+    <li>Suppression &gt; ajout</li>
+    <li>Chaque raccourci assumé est <strong>annoté</strong> (<code>ponytail:</code>) avec son plafond</li>
   </ul>
   <aside class="notes">10:30. Je l'ai en plugin OpenCode, mais honnêtement : l'essentiel tient en 10 lignes dans votre skill. C'est l'anti-pattern n°1 des agents : l'usine à gaz spéculative. Le modèle adore écrire des factories « au cas où ». Ces 10 lignes là sont le meilleur ratio lignes/valeur de tout le fichier. ⏱ En retard ? Cette slide et la suivante (tokenjuice) se compressent à ~30 s chacune — jamais le trio gates/classification/build avant elles.</aside>
 </section>
@@ -190,10 +190,10 @@
   <h2>tokenjuice : le contexte, c'est le budget</h2>
   <ul>
     <li>Sorties de commandes tronquées (head + tail), ANSI strippé, doublons tués</li>
-    <li>Ne re-lit pas un fichier déjà dans le contexte</li>
+    <li>Ne relit pas un fichier déjà dans le contexte</li>
     <li>Résultat : la session contrôleur <strong>tient des heures sans compaction</strong></li>
   </ul>
-  <p style="font-size:.75em">C'est ce qui rend le multi-subagents <em>viable économiquement</em> : un contrôleur propre peut orchestrer toute une journée.</p>
+  <p style="font-size:.75em">C'est ce qui rend l'approche multi-subagents <em>viable économiquement</em> : un contrôleur propre peut orchestrer toute une journée.</p>
   <p class="muted" style="font-size:.68em">S'installe sur les cinq outils de la salle — <code>tokenjuice install claude-code | cursor | copilot-cli | vscode-copilot | opencode</code> (stable) · <code>antigravity</code> (bêta)</p>
   <aside class="notes">11:30. Slide courte, message structurel : le workflow à subagents n'est rentable que si le contexte du contrôleur reste propre. tokenjuice fait le ménage automatiquement — un cœur partagé, des hooks fins par outil. Démo live si on demande : <code>tokenjuice --version && tokenjuice ls</code> — PAS d'install en direct, ça réécrit les fichiers de config de l'outil en pleine présentation.</aside>
 </section>
@@ -208,7 +208,7 @@
   <p style="font-size:.8em">↓ distillé avec un modèle frontière, en une session</p>
   <p><span class="big-num">113</span> <span style="font-size:.8em">lignes. Qui me vont <em>à moi</em>.</span></p>
   <ul style="font-size:.78em">
-    <li>La leçon : n'installez pas la usine à gaz. <strong>Lisez, distillez, possédez.</strong></li>
+    <li>La leçon : n'installez pas l'usine à gaz. <strong>Lisez, distillez, possédez.</strong></li>
     <li>Du markdown pur, zéro dépendance — le même fichier tourne dans tous les outils de cette salle</li>
   </ul>
   <aside class="notes">12:30. superpowers s'installe sur les 5 outils de la salle — c'est un excellent produit, installez-le si vous voulez la version complète. Mais l'argument de l'atelier : le vôtre vous ira mieux, vous saurez le modifier, et il coûte 25 minutes. Même fichier, tous les outils — zéro dette.</aside>
@@ -256,7 +256,7 @@
   <ul>
     <li>Où voulez-<strong>vous</strong> décider ? Avant le code ? avant le commit ? avant le push ?</li>
     <li>Formulez l'arrêt de façon explicite : « <strong>arrête-toi et attends mon OK</strong> »</li>
-    <li>Deux gates suffisent. Trois = friction, une = roulette.</li>
+    <li>Deux gates suffisent. Trois = friction, une = roulette russe.</li>
   </ul>
   <aside class="notes">Étape 2 — 21:30→26:30. Les gates sont la partie la plus personnelle : le backender prudent mettra une gate avant push, le gens du front avant toucher au design system. Insister sur la formulation impérative de l'arrêt — un vœu pieux (« idéalement valide avec moi ») n'est pas une gate.</aside>
 </section>
@@ -326,7 +326,7 @@
 
 <section class="title-slide">
   <h1>Le prochain vous coûtera 15 minutes.</h1>
-  <p class="sub" style="font-size:.75em">Vous n'écrirez plus jamais « fais un plan d'abord ».<br>Votre process l'aura fait.</p>
+  <p class="sub" style="font-size:.75em">Vous n'écrirez plus jamais « fais un plan d'abord ».<br>Votre processus l'aura fait.</p>
   <p class="meta">Débrief : qui lit le sien en 3 lignes ?<br><span class="muted">repo : level-up-your-skills · template · fiches par outil · cet atelier</span></p>
   <aside class="notes">43:00→45:00. Faire lire 2-3 skills à voix haute (prendre les volontaires qui ont fini l'étape 5). Clore sur la promesse tenue : tout le monde a un skill testé dans SON outil. Dernier réflexe à vendre : le skill qui suit sera plus facile que le premier — c'est un muscle.</aside>
 </section>

@@ -5,7 +5,7 @@ description: Nos conventions maison pour créer ou modifier des composants React
 
 # Composants React — conventions maison
 
-- Composants fonction + TypeScript. Pas de classes, pas de `any`.
+- Composants fonctionnels + TypeScript. Pas de classes, pas de `any`.
 - Réutilise la lib UI existante (`src/ui/`) — jamais un nouveau composant si un équivalent existe.
 - Aucune nouvelle dépendance sans me demander. `package.json` intouchable sans mon OK.
 - State local par défaut. State global seulement si deux vues le partagent — demande-moi.
