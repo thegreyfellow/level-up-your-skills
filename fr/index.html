@@ -11,13 +11,13 @@
 <body>
 <div class="reveal" data-vo2-footer="VO2 Group - Confidential"><div class="slides">
 
-<!-- ══════════ PARTIE 1 — PRÉSENTER (16 min démo incluse) ══════════ -->
+<!-- ══════════ PRÉSENTATION (40 min, démo incluse) — suivie de 20 min de questions ══════════ -->
 
 <section class="title-slide vo2-dark vo2-cover">
   <h1>Level Up Your Skills</h1>
   <p class="sub">Construisez le skill qui fait travailler vos agents <em>comme vous</em></p>
-  <p class="meta">Atelier · 45 min · 16 min stack + démo · 25 min vous construisez · 4 min débrief<br>Cursor · Copilot · Antigravity · Claude Code · OpenCode</p>
-  <aside class="notes">0:00 — 30 s. Qui je suis. Annonce du contrat : 16 min je vous montre ma stack + une démo, 25 min vous écrivez la vôtre (deux fichiers utilisables pour VOTRE outil), 4 min de débrief. Insister : aucun des fichiers d'aujourd'hui n'est spécifique à un outil — c'est du markdown. Rappel avant la session (email / invitation agenda) : outil installé et fonctionnel AVANT d'entrer — on teste en direct à l'étape 5.</aside>
+  <p class="meta">Présentation · 40 min + 20 min de questions<br>4 mois d'usage réel · projets personnels et clients</p>
+  <aside class="notes">0:00 — 1 min 30. Qui je suis. Le contrat : 40 minutes, je vous montre le skill que j'utilise depuis 4 mois — comment je l'ai construit, pourquoi il tient, ce qui le rend autonome — avec une démo, puis 20 minutes de questions. Insister : ce n'est pas un skill parmi d'autres, c'est un processus éprouvé sur des projets réels. Et c'est du markdown : rien n'est spécifique à un outil.</aside>
 </section>
 
 <section>
@@ -29,7 +29,7 @@
     <li>Le contexte est un poisson rouge : <strong>chaque session repart de zéro</strong></li>
     <li>Votre expérience est la première victime de la fenêtre de contexte</li>
   </ul>
-  <aside class="notes">1:00. Sondage rapide à main levée : qui a réécrit la même instruction à un agent cette semaine ? L'agent n'apprend pas de vos corrections — la seule mémoire fiable, c'est un fichier. Transition : donc écrivons le fichier.</aside>
+  <aside class="notes">1:30. Sondage rapide à main levée : qui a réécrit la même instruction à un agent cette semaine ? L'agent n'apprend pas de vos corrections — la seule mémoire fiable, c'est un fichier. Transition : donc écrivons le fichier.</aside>
 </section>
 
 <section>
@@ -37,12 +37,49 @@
   <h2>Votre façon de travailler est un processus. Écrivez-le une fois.</h2>
   <ul>
     <li>Un skill = <strong>un fichier markdown + une description</strong>. C'est tout.</li>
-    <li>Pas de code · pas de plugin · pas d'abonnement</li>
+    <li>Pas de code · pas de plugin</li>
     <li>Chargé <strong>au bon moment</strong> par l'outil que vous utilisez déjà</li>
     <li>Versionnable, diffable, partageable — comme du code</li>
   </ul>
   <p class="muted" style="font-size:.7em">Vous êtes développeurs : votre processus mérite un repo, pas des post-its dans un chat.</p>
-  <aside class="notes">2:00. Vocabulaire : selon l'outil ça s'appelle skill, rules ou instructions — même principe, du texte injecté dans le contexte au bon moment. Le « bon moment », c'est la <em>description</em> : c'est elle que le modèle lit pour décider de charger le skill. On y reviendra, c'est le point n°1 de qualité.</aside>
+  <aside class="notes">3:30. Vocabulaire : selon l'outil ça s'appelle skill, rules ou instructions — même principe, du texte injecté dans le contexte au bon moment. Le « bon moment », c'est la <em>description</em> : c'est elle que le modèle lit pour décider de charger le skill. On y reviendra, c'est le point n°1 de qualité.</aside>
+</section>
+
+<section>
+  <p class="kicker">Genèse</p>
+  <h2>Comment ce skill s'est construit</h2>
+  <ol style="font-size:.78em">
+    <li><strong>github.com/obra/superpowers</strong> Ça marche, mais ça consomme énormément de tokens.</li>
+    <li><strong>Découverte de ponytail.</strong> Les deux mélangés : toujours trop de tokens.</li>
+    <li><strong>Distillation.</strong> J'ai demandé à l'agent un skill minimal : les étapes clés de <strong>superpowers</strong> (obra) + l'esprit de <strong>ponytail</strong> (<strong>github.com/DietrichGebert/ponytail</strong>), avec l'échelle ponytail appliquée à <em>chaque</em> requête.</li>
+    <li><strong>Le processus a mûri.</strong> D'un agent qui me demande de l'aide à des <strong>subagents qui gèrent les sous-tâches et les problèmes</strong>, une fois le plan approuvé.</li>
+  </ol>
+  <p class="muted" style="font-size:.72em">Je n'ai rien inventé. J'ai distillé — puis itéré sur du vrai travail.</p>
+  <aside class="notes">5:30 — 4 min. Raconter l'histoire honnêtement, y compris les échecs : le premier skill était trop gourmand en tokens, le mélange avec ponytail aussi. La bascule : ne pas installer l'usine à gaz, mais demander à l'agent une version minimale, inspirée des étapes essentielles de superpowers (292k ★, excellent produit — installez-le si vous voulez la version complète) et de l'esprit de ponytail. L'échelle ponytail reste active à chaque requête : c'est ce qui limite les tokens. Puis le processus lui-même a évolué : au début il me sollicitait sans cesse, aujourd'hui les subagents traitent les sous-tâches et les blocages après l'approbation du plan. Message : un skill solide est un skill itéré.</aside>
+</section>
+
+<section>
+  <p class="kicker">Preuve</p>
+  <h2>4 mois d'usage réel</h2>
+  <ul>
+    <li>Utilisé pendant <strong>4 mois</strong>, sur des <strong>projets personnels et des projets clients</strong></li>
+    <li>Résultats robustes, et <strong>de moins en moins d'humain dans la boucle</strong> : j'interviens surtout aux deux gates</li>
+    <li>Même quota GitHub Copilot — l'outil que nous utilisons — mais <strong>environ 2× plus de tâches</strong> (mon ressenti, pas une mesure)</li>
+  </ul>
+  <p class="muted" style="font-size:.72em">Mieux comprendre le métier et mieux s'expliquer aide à repérer ce qui manque dans un ticket, ou comment il s'intègre au code existant.</p>
+  <aside class="notes">9:30 — 3 min. Être précis sur ce qui est dit : 4 mois, personnel et clients (pas de noms de clients). Le gain de quota est un ressenti : le même quota Copilot dure environ deux fois plus de tâches, voire plus. Ne pas inventer de chiffres de PR ou de tickets — je n'en ai pas. Le second effet, moins visible : le skill m'oblige à bien comprendre la tâche avant de coder, donc je repère plus vite les infos manquantes dans un ticket.</aside>
+</section>
+
+<section>
+  <p class="kicker">Le facteur clé</p>
+  <h2>Ce qui rend l'agent autonome : la validation</h2>
+  <ul>
+    <li>Le travail dur : <strong>du TDD et une validation automatisée</strong> qu'on peut lancer en une commande</li>
+    <li>Salesforce : <code>sf project deploy start --dry-run --test-level RunSpecifiedTests --tests MaClasseTest</code></li>
+    <li>Node : <code>npm test</code></li>
+  </ul>
+  <p style="font-size:.78em">Un projet sans tests = un agent sans garde-fou. <strong>Préparez le projet avec des tests</strong> : c'est ce qui rend les agents autonomes possibles aujourd'hui.</p>
+  <aside class="notes">12:30 — 3 min 30. Faire le lien avec la gate n°2 : « DONE » = la commande de vérification passe. Sans commande de validation automatisée, il n'y a rien à faire passer, donc l'humain redevient le test. C'est là que se joue l'autonomie. Exemples : Salesforce — un déploiement en dry-run limité à des tests ciblés (sf project deploy start --dry-run --test-level RunSpecifiedTests --tests MaClasseTest ; sf project deploy validate fait la même vérification et permet un quick-deploy ensuite) ; Node — npm test. Conseil concret : avant de brancher un agent sur un projet, préparer les tests et la commande.</aside>
 </section>
 
 <section>
@@ -52,7 +89,7 @@
     <div class="card">
       <div class="cmd">/workflow</div>
       <div class="role">le quoi</div>
-      <p>Mon processus : brainstorm → plan → approbation → build → validation.<br><strong>113 lignes.</strong></p>
+      <p>Mon processus : Brainstorm → Plan → Approve → Build → User validation.<br><strong>113 lignes.</strong></p>
     </div>
     <div class="card">
       <div class="cmd">ponytail</div>
@@ -66,56 +103,59 @@
     </div>
   </div>
   <p class="muted" style="font-size:.62em; margin-top:1em">workflow + ponytail = du markdown, portable partout · tokenjuice = s'installe sur les 5 outils de la salle (4 stables, 1 en bêta)</p>
-  <aside class="notes">3:00. Les trois couches : le processus, les garde-fous, l'économie de contexte. Les deux premières sont du markdown → utilisables dans les 5 outils de la salle. La troisième s'installe aussi sur les cinq : Claude Code, Cursor, Copilot, OpenCode — stables ; Antigravity — en bêta. Ensuite on zoome sur /workflow.</aside>
+  <aside class="notes">16:00. Les trois couches : le processus, les garde-fous, l'économie de contexte. Les deux premières sont du markdown → utilisables dans les 5 outils de la salle. La troisième s'installe aussi sur les cinq : Claude Code, Cursor, Copilot, OpenCode — stables ; Antigravity — en bêta. Ensuite on zoome sur /workflow.</aside>
 </section>
 
 <section>
   <p class="kicker">/workflow — le fichier</p>
-  <h2>Cinq phases, deux portes</h2>
+  <h2>Cinq phases, deux gates</h2>
   <div class="phases">
     <div class="phase"><span class="n">1</span><b>Brainstorm</b><small>classer la tâche</small></div>
     <div class="arrow">→</div>
-    <div class="phase"><span class="n">2</span><b>Plan</b><small>fichiers, vérité, plafond</small></div>
+    <div class="phase"><span class="n">2</span><b>Plan</b><small>files, verification, ceiling</small></div>
     <div class="arrow">→</div>
-    <div class="phase gate"><span class="n">Porte · 3</span><b>APPROUVER</b><small>l'humain décide</small></div>
+    <div class="phase gate"><span class="n">Gate · 3</span><b>APPROVE</b><small>l'humain décide</small></div>
     <div class="arrow">→</div>
     <div class="phase"><span class="n">4</span><b>Build</b><small>un subagent par tâche</small></div>
     <div class="arrow">→</div>
-    <div class="phase gate"><span class="n">Porte · 5</span><b>VALIDER</b><small>l'humain décide</small></div>
+    <div class="phase gate"><span class="n">Gate · 5</span><b>USER VALIDATION</b><small>l'humain décide</small></div>
   </div>
   <ul style="font-size:.75em">
-    <li>Principes constants : plus petit diff · stdlib et code existant avant dépendance · YAGNI · <strong>preuve avant « fini »</strong></li>
+    <li>Principes constants : plus petit diff · stdlib et code existant avant dépendance · YAGNI · <strong>preuve avant « DONE »</strong></li>
     <li>Boucles : échec en build → on refait le build · requirement qui change → retour au plan</li>
   </ul>
-  <aside class="notes">4:30. Lire le diagramme haut niveau. Les deux gates rouges = les deux seuls moments où tout s'arrête et où l'humain tranche. Entre les deux : autonomie complète. C'est le contrat : autonomie contre points de contrôle.</aside>
+  <aside class="notes">18:30. Lire le diagramme haut niveau. Les deux gates rouges = les deux seuls moments où tout s'arrête et où l'humain tranche. Entre les deux : autonomie complète. C'est le contrat : autonomie contre points de contrôle.</aside>
 </section>
 
 <section>
   <p class="kicker">Pourquoi ça marche — 1/5</p>
   <h2>Les deux gates : jamais d'auto-approbation</h2>
   <ul>
-    <li>L'agent <strong>s'arrête et attend</strong> : le plan avant le code, la sortie de tests fraîche avant « fini »</li>
-    <li>« Fini » = <strong>la commande de vérification passe</strong> — rien d'autre ne compte</li>
+    <li>L'agent <strong>s'arrête et attend</strong> : le plan avant le code, la sortie de tests fraîche avant « DONE »</li>
+    <li>« DONE » = <strong>la commande de vérification passe</strong> — rien d'autre ne compte</li>
     <li>Le contrôle humain aux deux seuls points irréversibles : <em>avant</em> d'écrire, <em>après</em> l'écriture</li>
   </ul>
-  <p style="font-size:.75em">Le problème n°1 des agents : optimiser pour <em>avoir l'air fini</em>. Une gate EST la spécification de l'arrêt.</p>
-  <aside class="notes">6:00. Le cœur du skill. Sans gate, l'agent enchaîne plan→code→« fini !» dans le même souffle et vous découvrez le résultat. Avec : vous voyez le plan quand il coûte encore 0 ligne de code. « Just do it » compte comme approbation — c'est écrit.</aside>
+  <p style="font-size:.75em">Le problème n°1 des agents : optimiser pour <em>avoir l'air <strong>DONE</strong></em>. Une gate EST la spécification de l'arrêt.</p>
+  <aside class="notes">21:00. Le cœur du skill. Sans gate, l'agent enchaîne plan→code→« DONE ! » dans le même souffle et vous découvrez le résultat. Avec : vous voyez le plan quand il coûte encore 0 ligne de code. « Just do it » compte comme approbation — c'est écrit.</aside>
 </section>
 
 <section>
   <p class="kicker">Pourquoi ça marche — 2/5</p>
   <h2>Classer avant de foncer</h2>
-  <ul>
-    <li><strong>Spike</strong> — une réponse, pas du code. Jetable par définition.</li>
-    <li><strong>Borné</strong> — un changement cadré. Design court, en chat.</li>
-    <li><strong>Architectural</strong> — nouveau sous-système. 2-3 options + recommandation.</li>
-  </ul>
+  <div class="phases">
+    <div class="phase"><b>Spike</b><small>question de faisabilité : la réponse est le livrable, le code est jetable</small></div>
+    <div class="arrow">→</div>
+    <div class="phase"><b>Bounded</b><small>changement cadré : design court, en chat</small></div>
+    <div class="arrow">→</div>
+    <div class="phase"><b>Architectural</b><small>nouveau sous-système : 2-3 options + recommandation</small></div>
+  </div>
+  <p class="muted" style="font-size:.62em; text-align:center">Process plus léger ← → process plus lourd · une tâche peut seulement aller vers la droite</p>
   <ul style="font-size:.8em">
-    <li>Le cliquet est à sens seul : la complexité cachée fait monter, jamais descendre</li>
+    <li>Complexité cachée découverte en route → la tâche <strong>passe à la catégorie à droite</strong>, jamais à gauche (un Spike qui devient Bounded, un Bounded qui devient Architectural)</li>
     <li>« Trop simple pour un design » <strong>n'existe pas</strong> — un design peut tenir en 2 phrases</li>
     <li>« X le couvre déjà » est une fin <strong>valide</strong></li>
   </ul>
-  <aside class="notes">7:30. La classification évite les deux pathologies : sur-traiter une petite tâche (cérémonie inutile) et sous-traiter une grosse (l'agent fonce sur 3 fichiers). Le cliquet protège contre la complexité cachée découverte en route. Et non, tout doit passer par un design — même de deux phrases. C'est ça qui tue le « trop simple pour… ».</aside>
+  <aside class="notes">24:00. La classification évite les deux pathologies : sur-traiter une petite tâche (cérémonie inutile) et sous-traiter une grosse (l'agent fonce sur 3 fichiers). La règle « on ne peut qu'aller vers la droite » (du plus léger au plus lourd) protège contre la complexité cachée découverte en route : une tâche Bounded qui se révèle Architectural est reclassée, on ne la minimise pas. Et non, tout doit passer par un design — même de deux phrases. C'est ça qui tue le « trop simple pour… ».</aside>
 </section>
 
 <section>
@@ -124,11 +164,11 @@
   <ul>
     <li>1 tâche = 1 subagent au <strong>contexte frais</strong>. Le prompt = son monde entier</li>
     <li>Contrat de rapport : <code>DONE · DONE_WITH_CONCERNS · NEEDS_CONTEXT · BLOCKED</code></li>
-    <li>Le contrôleur <strong>relit le diff</strong>. Il ne code jamais.</li>
+    <li>Le controller <strong>relit le diff</strong>. Il ne code jamais.</li>
     <li>Seuils : 3 tours de fix → modèle plus fort · 5 → re-plan · ~150 lignes → re-approbation</li>
   </ul>
   <p class="muted" style="font-size:.72em">Votre outil n'a pas de subagents ? (Copilot, Cursor…) Même discipline en inline : le prompt de tâche reste le contrat, la revue du diff reste obligatoire.</p>
-  <aside class="notes">9:00. Contexte frais = pas de pollution croisée entre tâches et pas de compaction en cours de route. Le contrôleur reste stratégique : coordination, revue, prochain plan. Le contrat de rapport force le subagent à signaler au lieu de bluffer. Mentionner la dégradation inline pour les autres outils — important pour le bloc atelier.</aside>
+  <aside class="notes">26:30. Contexte frais = pas de pollution croisée entre tâches et pas de compaction en cours de route. Le controller reste stratégique : coordination, revue, prochain plan. Le contrat de rapport force le subagent à signaler au lieu de bluffer. Mentionner la dégradation inline pour les outils sans subagents (Copilot, Cursor).</aside>
 </section>
 
 <section>
@@ -139,9 +179,9 @@
   <ul>
     <li>Pas d'abstraction spéculative, pas de factory pour un produit</li>
     <li>Suppression &gt; ajout</li>
-    <li>Chaque raccourci assumé est <strong>annoté</strong> (<code>ponytail:</code>) avec son plafond</li>
+    <li>Chaque raccourci assumé est <strong>annoté</strong> (<code>ponytail:</code>) avec son ceiling</li>
   </ul>
-  <aside class="notes">10:30. Je l'ai en plugin OpenCode, mais honnêtement : l'essentiel tient en 10 lignes dans votre skill. C'est l'anti-pattern n°1 des agents : l'usine à gaz spéculative. Le modèle adore écrire des factories « au cas où ». Ces 10 lignes là sont le meilleur ratio lignes/valeur de tout le fichier. ⏱ En retard ? Cette slide et la suivante (tokenjuice) se compressent à ~30 s chacune — jamais le trio gates/classification/build avant elles.</aside>
+  <aside class="notes">29:30. Je l'ai en plugin OpenCode, mais honnêtement : l'essentiel tient en 10 lignes dans votre skill. C'est l'anti-pattern n°1 des agents : l'usine à gaz spéculative. Le modèle adore écrire des factories « au cas où ». Ces 10 lignes là sont le meilleur ratio lignes/valeur de tout le fichier. ⏱ En retard ? Cette slide et la suivante (tokenjuice) se compressent à ~30 s chacune — jamais le trio gates/classification/build avant elles.</aside>
 </section>
 
 <section>
@@ -150,54 +190,38 @@
   <ul>
     <li>Sorties de commandes tronquées (head + tail), ANSI strippé, doublons tués</li>
     <li>Ne relit pas un fichier déjà dans le contexte</li>
-    <li>Résultat : la session contrôleur <strong>tient des heures sans compaction</strong></li>
+    <li>Résultat : la session controller <strong>tient des heures sans compaction</strong></li>
   </ul>
-  <p style="font-size:.75em">C'est ce qui rend l'approche multi-subagents <em>viable économiquement</em> : un contrôleur propre peut orchestrer toute une journée.</p>
+  <p style="font-size:.75em">C'est ce qui rend l'approche multi-subagents <em>viable économiquement</em> : un controller propre peut orchestrer toute une journée.</p>
   <p class="muted" style="font-size:.68em">S'installe sur les cinq outils de la salle — <code>tokenjuice install claude-code | cursor | copilot-cli | vscode-copilot | opencode</code> (stable) · <code>antigravity</code> (bêta)</p>
-  <aside class="notes">11:30. Slide courte, message structurel : le workflow à subagents n'est rentable que si le contexte du contrôleur reste propre. tokenjuice fait le ménage automatiquement — un cœur partagé, des hooks fins par outil. Démo live si on demande : <code>tokenjuice --version && tokenjuice ls</code> — PAS d'install en direct, ça réécrit les fichiers de config de l'outil en pleine présentation.</aside>
-</section>
-
-<section>
-  <p class="kicker">Pedigree</p>
-  <h2>Je n'ai rien inventé. J'ai distillé.</h2>
-  <ul>
-    <li><strong>superpowers</strong> (obra) — 292k ★ — la méthodo complète : brainstorm, plans, TDD subagent, review</li>
-    <li><strong>ponytail</strong> (DietrichGebert) — la paresse méthodique</li>
-  </ul>
-  <p style="font-size:.8em">↓ distillé avec un modèle frontière, en une session</p>
-  <p><span class="big-num">113</span> <span style="font-size:.8em">lignes. Qui me vont <em>à moi</em>.</span></p>
-  <ul style="font-size:.78em">
-    <li>La leçon : n'installez pas l'usine à gaz. <strong>Lisez, distillez, possédez.</strong></li>
-    <li>Du markdown pur, zéro dépendance — le même fichier tourne dans tous les outils de cette salle</li>
-  </ul>
-  <aside class="notes">12:30. superpowers s'installe sur les 5 outils de la salle — c'est un excellent produit, installez-le si vous voulez la version complète. Mais l'argument de l'atelier : le vôtre vous ira mieux, vous saurez le modifier, et il coûte 25 minutes. Même fichier, tous les outils — zéro dette.</aside>
+  <aside class="notes">31:00. Slide courte, message structurel : le workflow à subagents n'est rentable que si le contexte du controller reste propre. tokenjuice fait le ménage automatiquement — un cœur partagé, des hooks fins par outil. Démo live si on demande : <code>tokenjuice --version && tokenjuice ls</code> — PAS d'install en direct, ça réécrit les fichiers de config de l'outil en pleine présentation.</aside>
 </section>
 
 <section>
   <p class="kicker">Démo</p>
-  <h2>90 secondes, en vrai</h2>
+  <h2>En vrai, en direct</h2>
   <ol style="font-size:.78em">
-    <li>« Nouvelle tâche : ajoute un endpoint /health » → il <strong>classifie</strong> (borné), propose un plan, <strong>s'arrête</strong></li>
+    <li>« Nouvelle tâche : ajoute un endpoint /health » → il <strong>classifie</strong> (Bounded), propose un plan, <strong>s'arrête</strong></li>
     <li>« OK » → branche, TDD, commits, revue du diff à chaque tâche</li>
     <li>Sortie de tests fraîche + handoff → <strong>il attend</strong> ma validation</li>
   </ol>
-  <aside class="notes">14:00. Démo live OpenCode (branch git jetable). Plan B si panne : on passe directement à l'atelier — rien ne casse (le script de la démo est dans le README pour la rejouer). Rester dans les 90 secondes : montrer les deux arrêts, c'est tout.</aside>
+  <aside class="notes">32:30 — 4 min. Démo live OpenCode (branch git jetable). Plan B si panne : on passe directement à la suite — rien ne casse (le script de la démo est dans le README pour la rejouer). Montrer les deux arrêts (plan, handoff) ; la démo peut aller jusqu'à 4 min si le public pose des questions.</aside>
 </section>
 
 <section>
-  <p class="kicker">Dogfooding</p>
-  <h2>Préparer cet atelier a amélioré le skill</h2>
-  <p style="font-size:.8em">Construire cette présentation avec mon agent a fait remonter des manques réels dans <code>/workflow</code>. Les prochaines modifications que j'y apporterais :</p>
+  <p class="kicker">La suite</p>
+  <h2>Prochaine itération : l'orchestrateur</h2>
+  <p style="font-size:.8em"><code>/workflow</code> gère un ticket. L'orchestrateur en gère plusieurs, en parallèle :</p>
   <ul>
-    <li><strong>Le plan passe dans un fichier</strong> — dès qu'une seconde tâche consomme les interfaces d'une autre, le plan va dans <code>docs/plans/&lt;slug&gt;.md</code> : un état partagé qui survit à la compaction</li>
-    <li><strong>« Jamais de commit sur main » passe de la prose au code</strong> — un hook git pre-commit de 9 lignes qui bloque, au lieu d'une demande polie</li>
-    <li><strong>Le protocole de dispatch remonte au début de la phase 4</strong> — la partie la plus précieuse ne doit pas rester sous le pli</li>
+    <li><strong>Brainstorm et plan remontent d'un niveau</strong> : il reçoit une liste de tickets (ou un accès MCP à Jira) et on les passe un par un ensemble</li>
+    <li>Il ouvre <strong>une session tmux par ticket</strong>, dans un worktree et une branche séparés, qui exécute <code>/workflow</code></li>
+    <li>Moi : le brainstorm/plan, la review, et les tickets qui remontent un problème</li>
   </ul>
-  <p class="muted" style="font-size:.72em">Un skill est un document vivant — c'est en l'utilisant qu'on découvre sa prochaine version. Comme pour le code.</p>
-  <aside class="notes">15:30 — 30 s. Transition vers la partie 2. Le méta-message : cet atelier a été construit avec le skill, et cet usage a révélé la prochaine itération. Lire les trois points vite, poser la phrase de fin, basculer. (Démo raccourcie à 90 s pour faire de la place.)</aside>
+  <p class="muted" style="font-size:.72em">Les skills vont continuer d'évoluer : les modèles progressent et auront besoin de moins d'explications. Un skill est un document vivant.</p>
+  <aside class="notes">36:30 — 3 min 30. C'est une direction, pas un produit fini : ne pas dire que c'est livré. Les sessions de ticket sont de vraies sessions (pas des subagents imbriqués) parce que les subagents sont en lecture seule et qu'on n'interagit avec eux que via l'agent principal ; pour garder le contrôle sur chaque ticket, on ouvre de nouvelles sessions au niveau workflow. Je peux intervenir quand un ticket remonte un problème. Matière pour les questions si besoin : plan dans un fichier (docs/plans/<slug>.md) pour survivre à la compaction, hook git pre-commit qui bloque les commits sur main, protocole de dispatch remonté au début de la phase 4. Puis ouvrir les questions (20 min).</aside>
 </section>
 
-<!-- ══════════ PARTIE 2 — L'ATELIER (25 min) ══════════ -->
+<!-- ══════════ PARTIE 2 — L'ATELIER (non présenté — conservé pour référence) ══════════ -->
 
 <section class="vo2-dark vo2-section">
   <p class="kicker">Partie 2</p>
@@ -242,7 +266,7 @@
     <li>Branches, commits : quelle hygiène minimum ?</li>
   </ul>
   <p class="muted" style="font-size:.72em">Copilot / Cursor : mode inline ou agent tasks · Claude / OpenCode : subagent par tâche</p>
-  <aside class="notes">Étape 3 — 26:30→31:30. Pas de dogme TDD ici : la version minimale honnête c'est « un check runnable pour la logique non triviale ». Ce qui compte : que « fini » ait une définition vérifiable par commande.</aside>
+  <aside class="notes">Étape 3 — 26:30→31:30. Pas de dogme TDD ici : la version minimale honnête c'est « un check runnable pour la logique non triviale ». Ce qui compte : que « DONE » ait une définition vérifiable par commande.</aside>
 </section>
 
 <section class="step">
