@@ -4,41 +4,50 @@
 <meta charset="utf-8">
 <title>Level Up Your Skills — workshop</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="theme/fonts.css">
 <style>
-  :root { --accent: #b3261e; --ink: #1a1a1a; --soft: #666; --line: #ddd; }
+  /* VO2 Group landing: flat navy ground, light-blue accents, Jost caps titles, Inter body */
   * { box-sizing: border-box; margin: 0; }
+  html { overflow-x: hidden; }
   body {
-    font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: var(--ink);
+    font-family: var(--font-body); color: #fff; background: var(--vo2-navy);
     min-height: 100vh; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 2.2rem; padding: 2rem;
-    background: #fafafa;
+    align-items: center; justify-content: center; gap: 2.6rem; padding: 3rem 1rem 5rem;
+    position: relative; overflow: hidden;
   }
-  header { text-align: center; }
-  header h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -.02em; }
-  header p { color: var(--soft); margin-top: .4rem; }
-  .cards { display: flex; gap: 1.4rem; flex-wrap: wrap; justify-content: center; }
+  .sfield { position: absolute; width: 600px; height: 562px; right: -150px; top: -190px; transform: scale(.72); pointer-events: none; }
+  .sfield i { position: absolute; width: 225px; height: 225px; border-radius: 50%; background: var(--vo2-pale-blue); opacity: .14; }
+  .sfield i:nth-child(1) { left: 300px; top: 0; } .sfield i:nth-child(2) { left: 75px; top: 1px; }
+  .sfield i:nth-child(3) { left: 0; top: 213px; } .sfield i:nth-child(4) { left: 374px; top: 211px; }
+  .sfield i:nth-child(5) { left: 188px; top: 337px; }
+  header { text-align: center; position: relative; }
+  .eyebrow { font-family: var(--font-title); font-weight: 400; font-size: .95rem; letter-spacing: .08em; text-transform: uppercase; color: var(--vo2-pale-blue); }
+  header h1 { font-family: var(--font-title); font-size: clamp(2.2rem, 6vw, 3.4rem); font-weight: 700; text-transform: uppercase; letter-spacing: -.01em; line-height: .95; margin-top: .6rem; }
+  .cards { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; position: relative; }
   a.card {
-    display: block; width: 300px; padding: 1.4rem 1.5rem; text-decoration: none;
-    color: inherit; background: #fff; border: 2px solid var(--line); border-radius: 12px;
-    transition: border-color .15s, transform .15s;
+    display: block; width: 300px; max-width: 100%; padding: 1.5rem 1.6rem; text-decoration: none;
+    color: var(--vo2-ink); background: #fff; border-radius: var(--radius-md);
+    transition: opacity .3s var(--ease-out);
   }
-  a.card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  a.card:hover { opacity: .82; }
   .badge {
-    display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .1em;
-    color: var(--accent); border: 1.5px solid var(--accent); border-radius: 5px;
-    padding: .1rem .5rem; margin-bottom: .7rem;
+    display: inline-block; font-family: var(--font-title); font-size: .78rem; font-weight: 700; letter-spacing: .06em;
+    color: var(--vo2-navy); border: 2px solid var(--vo2-navy); border-radius: var(--radius-pill);
+    padding: .15rem .7rem; margin-bottom: .9rem;
   }
-  .card h2 { font-size: 1.15rem; font-weight: 700; }
-  .card p { font-size: .88rem; color: var(--soft); margin-top: .35rem; line-height: 1.4; }
-  .card .go { display: block; margin-top: .9rem; font-size: .85rem; font-weight: 600; color: var(--accent); }
-  footer { font-size: .8rem; color: var(--soft); text-align: center; line-height: 1.7; }
-  code { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: .92em; background: #f0f0f0; padding: .1rem .35rem; border-radius: 4px; }
+  .card h2 { font-family: var(--font-title); font-size: 1.3rem; font-weight: 700; text-transform: uppercase; line-height: 1; }
+  .card p { font-size: .9rem; color: var(--vo2-gray); margin-top: .5rem; line-height: 1.45; }
+  .card .go { display: block; margin-top: 1rem; font-size: .88rem; font-weight: 700; color: var(--vo2-navy); }
+  footer { font-size: .8rem; color: var(--vo2-pale-blue); text-align: center; line-height: 1.8; position: relative; }
+  code { font-family: var(--font-mono); font-size: .92em; background: rgba(255,255,255,.12); color: #fff; padding: .1rem .4rem; border-radius: var(--radius-sm); }
+  .foot-r { position: absolute; right: 25px; bottom: 25px; height: 26px; }
 </style>
 </head>
 <body>
+<div class="sfield" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 <header>
+  <p class="eyebrow">Workshop · 45 min</p>
   <h1>Level Up Your Skills</h1>
-  <p>Workshop · 45 min</p>
 </header>
 <div class="cards">
   <a class="card" href="fr/index.html" lang="fr">
@@ -58,5 +67,6 @@
   <code>S</code> speaker notes · arrow keys to navigate · works fully offline<br>
   served by <code>node server.js</code>
 </footer>
+<img class="foot-r" src="theme/brand/vo2-wordmark-white.svg" alt="VO2 Group">
 </body>
 </html>

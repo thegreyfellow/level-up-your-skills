@@ -5,56 +5,15 @@
 <title>Level Up Your Skills — construisez votre skill principal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../vendor/reveal/reveal.css">
-<link rel="stylesheet" href="../vendor/reveal/theme/white.css" id="theme">
+<link rel="stylesheet" href="../theme/vo2.css" id="theme">
 <link rel="stylesheet" href="../vendor/reveal/plugin/highlight/monokai.css">
-<style>
-  :root { --accent: #b3261e; --ink: #1a1a1a; --soft: #666; }
-  .reveal { font-family: "Inter", "Segoe UI", system-ui, sans-serif; font-size: 30px; color: var(--ink); }
-  .reveal h1 { font-size: 2.4em; font-weight: 800; }
-  .reveal h2 { font-size: 1.25em; font-weight: 700; text-align: left; margin-bottom: .6em; }
-  .reveal h3 { font-size: 1.0em; font-weight: 700; text-align: left; }
-  .reveal section { text-align: left; }
-  .reveal pre { width: 100%; font-size: .55em; line-height: 1.35; }
-  .reveal code { font-family: "JetBrains Mono", "Fira Code", monospace; }
-  .reveal ul { display: block; }
-  .reveal li { margin: .35em 0; }
-  .kicker { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: .55em; margin-bottom: 1.2em; }
-  .muted { color: var(--soft); }
-  .accent { color: var(--accent); font-weight: 700; }
-  .title-slide h1 { text-align: center; margin-bottom: .2em; }
-  .title-slide .sub { text-align: center; font-size: .85em; color: var(--soft); }
-  .title-slide .meta { text-align: center; font-size: .6em; margin-top: 2.5em; }
-  /* stack cards */
-  .cards { display: flex; gap: 1.2em; margin-top: 1em; }
-  .card { flex: 1; border: 2px solid #ddd; border-radius: 10px; padding: .8em 1em; background: #fafafa; }
-  .card .cmd { font-family: monospace; font-weight: 700; font-size: 1.0em; color: var(--accent); }
-  .card .role { font-size: .5em; text-transform: uppercase; letter-spacing: .1em; color: var(--soft); margin: .3em 0 .5em; }
-  .card p { font-size: .62em; margin: 0; line-height: 1.35; }
-  /* phases diagram */
-  .phases { display: flex; align-items: stretch; gap: .55em; margin: 1.1em 0 .8em; }
-  .phase { flex: 1; border: 2px solid var(--ink); border-radius: 9px; padding: .5em .55em; text-align: center; }
-  .phase .n { font-size: .5em; color: var(--soft); }
-  .phase b { display: block; font-size: .78em; line-height: 1.1; margin-top: .1em; }
-  .phase small { display: block; font-size: .48em; color: var(--soft); margin-top: .25em; }
-  .phase.gate { border-color: var(--accent); background: var(--accent); color: #fff; }
-  .phase.gate .n, .phase.gate small { color: #ffd9d6; }
-  .arrow { align-self: center; font-size: .8em; color: var(--soft); }
-  .flow-note { font-size: .55em; color: var(--soft); margin-top: .6em; }
-  table.tools { font-size: .58em; width: 100%; border-collapse: collapse; }
-  table.tools th, table.tools td { border: 1px solid #ccc; padding: .45em .6em; text-align: left; vertical-align: top; }
-  table.tools th { background: #f2f2f2; }
-  table.tools code { font-size: .92em; }
-  .big-num { font-size: 2.2em; font-weight: 800; color: var(--accent); line-height: 1; }
-  .exercise-tag { position: absolute; top: -1.6em; left: 0; font-size: .45em; letter-spacing: .12em; color: #fff; background: var(--accent); padding: .25em .8em; border-radius: 4px; text-transform: uppercase; font-weight: 700; }
-  .step h2 .t { float: right; color: var(--soft); font-weight: 400; font-size: .55em; margin-top: .35em; }
-</style>
 </head>
 <body>
-<div class="reveal"><div class="slides">
+<div class="reveal" data-vo2-footer="VO2 Group - Confidential"><div class="slides">
 
 <!-- ══════════ PARTIE 1 — PRÉSENTER (16 min démo incluse) ══════════ -->
 
-<section class="title-slide">
+<section class="title-slide vo2-dark vo2-cover">
   <h1>Level Up Your Skills</h1>
   <p class="sub">Construisez le skill qui fait travailler vos agents <em>comme vous</em></p>
   <p class="meta">Atelier · 45 min · 16 min stack + démo · 25 min vous construisez · 4 min débrief<br>Cursor · Copilot · Antigravity · Claude Code · OpenCode</p>
@@ -118,11 +77,11 @@
     <div class="arrow">→</div>
     <div class="phase"><span class="n">2</span><b>Plan</b><small>fichiers, vérité, plafond</small></div>
     <div class="arrow">→</div>
-    <div class="phase gate"><span class="n">⛔ 3</span><b>APPROUVER</b><small>l'humain décide</small></div>
+    <div class="phase gate"><span class="n">Porte · 3</span><b>APPROUVER</b><small>l'humain décide</small></div>
     <div class="arrow">→</div>
     <div class="phase"><span class="n">4</span><b>Build</b><small>un subagent par tâche</small></div>
     <div class="arrow">→</div>
-    <div class="phase gate"><span class="n">⛔ 5</span><b>VALIDER</b><small>l'humain décide</small></div>
+    <div class="phase gate"><span class="n">Porte · 5</span><b>VALIDER</b><small>l'humain décide</small></div>
   </div>
   <ul style="font-size:.75em">
     <li>Principes constants : plus petit diff · stdlib et code existant avant dépendance · YAGNI · <strong>preuve avant « fini »</strong></li>
@@ -240,7 +199,7 @@
 
 <!-- ══════════ PARTIE 2 — L'ATELIER (25 min) ══════════ -->
 
-<section>
+<section class="vo2-dark vo2-section">
   <p class="kicker">Partie 2</p>
   <h2>À vous — 25 minutes, deux fichiers</h2>
   <ul>
@@ -337,7 +296,7 @@
   <aside class="notes">42:00. Le point clé pour une salle multi-outils : écrivez UNE fois, référencez partout. AGENTS.md est le plus petit dénominateur commun (Cursor, Copilot, Antigravity, OpenCode). Les fiches détaillées sont dans le dossier — ne pas lire la table, la montrer.</aside>
 </section>
 
-<section class="title-slide">
+<section class="title-slide vo2-dark vo2-outro">
   <h1>Le prochain vous coûtera 15 minutes.</h1>
   <p class="sub" style="font-size:.75em">Vous n'écrirez plus jamais « fais un plan d'abord ».<br>Votre processus l'aura fait.</p>
   <p class="meta">Débrief : qui lit le sien en 3 lignes ?<br><span class="muted">repo : level-up-your-skills · template · fiches par outil · cet atelier</span></p>
@@ -350,11 +309,12 @@
 <script src="../vendor/reveal/plugin/markdown.js"></script>
 <script src="../vendor/reveal/plugin/highlight.js"></script>
 <script src="../vendor/reveal/plugin/notes.js"></script>
+<script src="../theme/vo2.js"></script>
 <script>
 Reveal.initialize({
-  width: 1280, height: 720, margin: 0.05,
-  hash: true, slideNumber: true,
-  transition: 'slide',
+  width: 1280, height: 720, margin: 0, center: false,
+  hash: true, slideNumber: 'c/t', controlsLayout: 'edges',
+  transition: 'fade', backgroundTransition: 'fade',
   plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 });
 </script>

@@ -1,0 +1,214 @@
+/* ===================================================================
+   VO2 Group theme for reveal.js (1280x720 canvas, validated slide chart)
+   - Content slides: white ground, black / gray text, navy as the accent.
+   - Intro / section / outro slides: flat navy #142765 + light blue #d3e1ef.
+   - Titles: Jost, ALL CAPS, 400/700 only. Body: Inter 400 (700 for inline emphasis).
+   - Flat: no gradients, no shadows, 2px strokes, 8px card radii, pill tags.
+   - Footer on every slide: note bottom-left, VO2 Group logo bottom-right (see vo2.js).
+   Load after reveal.css. Replaces the reveal "white" theme.
+   =================================================================== */
+@import url("fonts.css");
+
+:root {
+  --r-background-color: #fff;
+  --accent: var(--vo2-navy);
+  --ink: var(--vo2-ink);
+  --soft: var(--vo2-gray);
+  --margin-x: 43px;            /* 0.85cm outer content margin */
+}
+
+.reveal-viewport { background: #fff; }
+
+.reveal {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.reveal ::selection { background: var(--vo2-pale-blue); color: var(--vo2-ink); }
+
+/* ---- Slide frame ---------------------------------------------------- */
+.reveal .slides { text-align: left; }
+.reveal .slides > section {
+  height: 720px;
+  padding: 0 var(--margin-x) 70px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.reveal section { line-height: 1.4; }
+
+/* ---- Header block: SUBTITLE above TITLE, both caps ----------------- */
+.reveal .kicker {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0;
+  padding-top: 22px;           /* subtitle cap top ~0.50cm */
+}
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+  line-height: .95;
+  color: inherit;
+  text-shadow: none;
+  word-wrap: normal;
+}
+.reveal h1 { font-size: 64px; margin: 0; }
+.reveal h2 { font-size: 40px; margin: 14px 0 34px; text-align: left; }
+.reveal h3 { font-size: 24px; margin: 0 0 .5em; text-align: left; }
+.reveal h2:first-child { padding-top: 46px; margin-top: 0; }
+
+/* ---- Body ------------------------------------------------------------ */
+.reveal p { margin: 0 0 .7em; line-height: 1.4; }
+.reveal strong, .reveal b { font-weight: 700; }
+.reveal em { font-style: italic; }
+.reveal a { color: var(--vo2-navy); text-decoration: underline; text-underline-offset: 3px; }
+.reveal a:hover { opacity: .82; }
+.reveal .muted { color: var(--soft); }
+.reveal .accent { color: var(--accent); font-weight: 700; }
+
+/* Bullets: two levels, filled black dot then hollow ring (brand bullet spec) */
+.reveal ul { display: block; list-style: none; margin: 0 0 .7em; padding: 0; }
+.reveal ul > li { position: relative; padding-left: 34px; margin: 0 0 .5em; line-height: 1.3; }
+.reveal ul > li::before {
+  content: ""; position: absolute; left: 6px; top: .5em;
+  width: 11px; height: 11px; border-radius: 50%; background: currentColor;
+}
+.reveal ul ul { margin: .4em 0 0; }
+.reveal ul ul > li::before { background: none; border: 1.5px solid currentColor; box-sizing: border-box; }
+.reveal ol { display: block; margin: 0 0 .7em; padding-left: 34px; }
+.reveal ol > li { margin: 0 0 .5em; line-height: 1.3; padding-left: 6px; }
+.reveal ol > li::marker { font-family: var(--font-title); font-weight: 700; color: var(--accent); }
+
+/* Pull quote: curly quotes in copy, navy rule, no shadow */
+.reveal blockquote {
+  width: auto; margin: 0 0 1em; padding: 4px 0 4px 22px;
+  background: none; box-shadow: none; font-style: normal;
+  border-left: 2px solid var(--vo2-navy);
+}
+
+/* Code */
+.reveal code {
+  font-family: var(--font-mono); font-size: .86em;
+  background: var(--vo2-grey-1); color: var(--vo2-ink);
+  padding: .08em .35em; border-radius: var(--radius-sm);
+}
+.reveal pre { width: 100%; font-size: .55em; line-height: 1.35; box-shadow: none; }
+.reveal pre code { padding: 1em; border-radius: var(--radius-md); }
+
+/* ---- Stack cards ------------------------------------------------------ */
+.reveal .cards { display: flex; gap: 24px; margin-top: 8px; }
+.reveal .card {
+  flex: 1; padding: 24px 26px; border-radius: var(--radius-md);
+  background: var(--vo2-gray-50); border: 0;
+}
+.reveal .card .cmd { font-family: var(--font-title); font-weight: 700; font-size: 30px; line-height: 1; color: var(--accent); }
+.reveal .card .role {
+  font-family: var(--font-title); font-weight: 400; font-size: 15px;
+  text-transform: uppercase; letter-spacing: .08em; color: var(--soft);
+  margin: 10px 0 14px; padding-bottom: 12px; border-bottom: 1px solid var(--vo2-gray-cool);
+}
+.reveal .card p { font-size: 17px; margin: 0; line-height: 1.4; }
+
+/* ---- Phases diagram (2px stroke motif, gates in flat navy) ------------ */
+.reveal .phases { display: flex; align-items: stretch; gap: 12px; margin: 8px 0 28px; }
+.reveal .phase {
+  flex: 1; border: 2px solid var(--vo2-ink); border-radius: var(--radius-md);
+  padding: 16px 12px; text-align: center;
+}
+.reveal .phase .n { font-family: var(--font-title); font-weight: 700; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: var(--soft); }
+.reveal .phase b { display: block; font-family: var(--font-title); font-weight: 700; text-transform: uppercase; font-size: 21px; line-height: 1; margin-top: 8px; }
+.reveal .phase small { display: block; font-size: 13px; color: var(--soft); margin-top: 8px; line-height: 1.25; }
+.reveal .phase.gate { border-color: var(--vo2-navy); background: var(--vo2-navy); color: #fff; }
+.reveal .phase.gate .n, .reveal .phase.gate small { color: var(--vo2-pale-blue); }
+.reveal .arrow { align-self: center; font-size: 22px; color: var(--soft); }
+.reveal .flow-note { font-size: 15px; color: var(--soft); margin-top: 16px; }
+
+/* ---- Tables (navy header, hairline rules) ------------------------------ */
+.reveal table.tools { font-size: 15px; width: 100%; border-collapse: collapse; margin: 0; }
+.reveal table.tools th, .reveal table.tools td {
+  border: 0; border-bottom: 1px solid var(--vo2-hairline);
+  padding: 12px 14px; text-align: left; vertical-align: top; line-height: 1.4;
+}
+.reveal table.tools th {
+  background: var(--vo2-navy); color: #fff;
+  font-family: var(--font-title); font-weight: 700; text-transform: uppercase;
+  font-size: 14px; letter-spacing: .02em; line-height: 1.15;
+}
+.reveal table.tools td:first-child { font-family: var(--font-title); font-weight: 700; text-transform: uppercase; }
+.reveal table.tools code { font-size: .92em; }
+
+/* ---- Numbers, tags ----------------------------------------------------- */
+.reveal .big-num { font-family: var(--font-title); font-size: 96px; font-weight: 700; color: var(--accent); line-height: .9; vertical-align: -0.12em; }
+.reveal .step .exercise-tag {
+  display: inline-block; margin-top: 22px;
+  font-family: var(--font-title); font-weight: 700; font-size: 15px;
+  letter-spacing: .06em; text-transform: uppercase; line-height: 1;
+  color: var(--vo2-navy); border: 2px solid var(--vo2-navy);
+  border-radius: var(--radius-pill); padding: 7px 16px;
+}
+.reveal .step h2 { margin-top: 14px; padding-top: 0; }
+.reveal .step h2 .t {
+  float: right; color: var(--soft); font-weight: 400; font-size: 22px;
+  letter-spacing: .02em; margin-top: 10px;
+}
+
+/* ---- Navy slides: cover, section, outro --------------------------------- */
+.reveal .slides > section.vo2-dark { color: #fff; }
+.reveal .vo2-dark .kicker,
+.reveal .vo2-dark .muted,
+.reveal .vo2-dark .accent { color: var(--vo2-pale-blue); }
+.reveal .vo2-dark code { background: rgba(255, 255, 255, .12); color: #fff; }
+.reveal .vo2-dark a { color: #fff; }
+
+.reveal .slides > section.vo2-cover,
+.reveal .slides > section.vo2-outro { padding-left: 56px; }
+.reveal .vo2-cover > :not(.sfield):not(.vo2-foot) { position: relative; z-index: 2; max-width: 540px; text-align: left; }
+.reveal .vo2-outro > :not(.sfield):not(.vo2-foot) { position: relative; z-index: 2; max-width: 680px; text-align: left; }
+.reveal .vo2-cover h1 { padding-top: 250px; }
+.reveal .vo2-outro h1 { padding-top: 160px; font-size: 60px; }
+.reveal .title-slide .sub { font-size: 24px; color: var(--vo2-pale-blue); margin-top: 22px; line-height: 1.3; }
+.reveal .title-slide .meta { font-size: 15px; margin-top: 46px; line-height: 1.6; color: #fff; }
+
+.reveal .vo2-section > :not(.sfield):not(.vo2-foot) { position: relative; z-index: 2; max-width: 820px; }
+.reveal .vo2-section .kicker { padding-top: 60px; }
+.reveal .vo2-section h2 { font-size: 52px; margin-top: 16px; }
+
+/* Sirius circle field: five flat circles, always upright, never over text */
+.reveal .sfield { position: absolute; width: 600px; height: 562px; z-index: 1; pointer-events: none; }
+.reveal .sfield i { position: absolute; width: 225px; height: 225px; border-radius: 50%; background: var(--sc, #fff); }
+.reveal .sfield i:nth-child(1) { left: 300px; top: 0; }
+.reveal .sfield i:nth-child(2) { left: 75px;  top: 1px; }
+.reveal .sfield i:nth-child(3) { left: 0;     top: 213px; }
+.reveal .sfield i:nth-child(4) { left: 374px; top: 211px; }
+.reveal .sfield i:nth-child(5) { left: 188px; top: 337px; }
+.reveal .vo2-cover .sfield { right: 84px; top: 74px; transform: scale(.9); transform-origin: 100% 0; }
+.reveal .vo2-section .sfield,
+.reveal .vo2-outro .sfield { --sc: var(--vo2-pale-blue); right: -150px; top: -190px; transform: scale(.72); }
+
+/* ---- Footer (injected by vo2.js) ------------------------------------------ */
+.reveal .vo2-foot { position: absolute; left: 0; right: 0; bottom: 0; height: 0; z-index: 5; }
+.reveal .vo2-foot span {
+  position: absolute; left: 25px; bottom: 25px;
+  font-family: var(--font-body); font-size: 11px; letter-spacing: .02em; line-height: 1;
+  color: var(--vo2-grey-3);
+}
+.reveal .vo2-foot img { position: absolute; right: 25px; bottom: 25px; height: 26px; width: auto; margin: 0; }
+.reveal .vo2-dark .vo2-foot span { color: #fff; }
+
+/* ---- Chrome ----------------------------------------------------------------- */
+.reveal .slide-number {
+  background: none; color: var(--vo2-grey-3);
+  font-family: var(--font-body); font-size: 12px;
+  top: 18px; right: 22px; bottom: auto;
+}
+.reveal .slide-number a { text-decoration: none; color: inherit; }
+.reveal .controls { color: var(--vo2-navy); }
+.reveal .progress { color: var(--vo2-navy); height: 3px; }
