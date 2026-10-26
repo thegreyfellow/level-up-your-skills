@@ -16,7 +16,7 @@
 <section class="title-slide vo2-dark vo2-cover">
   <h1>Level Up Your Skills</h1>
   <p class="sub">Construisez le skill qui fait travailler vos agents <em>comme vous</em></p>
-  <p class="meta">Présentation · 40 min + 20 min de questions<br>4 mois d'usage réel · projets personnels et clients</p>
+  <p class="meta">Présentation · /workflow skill principal de dev<br>4 mois d'usage réel · projets personnels et clients</p>
   <aside class="notes">0:00 — 1 min 30. Qui je suis. Le contrat : 40 minutes, je vous montre le skill que j'utilise depuis 4 mois — comment je l'ai construit, pourquoi il tient, ce qui le rend autonome — avec une démo, puis 20 minutes de questions. Insister : ce n'est pas un skill parmi d'autres, c'est un processus éprouvé sur des projets réels. Et c'est du markdown : rien n'est spécifique à un outil.</aside>
 </section>
 
@@ -197,7 +197,7 @@
   <aside class="notes">31:00. Slide courte, message structurel : le workflow à subagents n'est rentable que si le contexte du controller reste propre. tokenjuice fait le ménage automatiquement — un cœur partagé, des hooks fins par outil. Démo live si on demande : <code>tokenjuice --version && tokenjuice ls</code> — PAS d'install en direct, ça réécrit les fichiers de config de l'outil en pleine présentation.</aside>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <p class="kicker">Démo</p>
   <h2>En vrai, en direct</h2>
   <ol style="font-size:.78em">
@@ -219,6 +219,13 @@
   </ul>
   <p class="muted" style="font-size:.72em">Les skills vont continuer d'évoluer : les modèles progressent et auront besoin de moins d'explications. Un skill est un document vivant.</p>
   <aside class="notes">36:30 — 3 min 30. C'est une direction, pas un produit fini : ne pas dire que c'est livré. Les sessions de ticket sont de vraies sessions (pas des subagents imbriqués) parce que les subagents sont en lecture seule et qu'on n'interagit avec eux que via l'agent principal ; pour garder le contrôle sur chaque ticket, on ouvre de nouvelles sessions au niveau workflow. Je peux intervenir quand un ticket remonte un problème. Matière pour les questions si besoin : plan dans un fichier (docs/plans/<slug>.md) pour survivre à la compaction, hook git pre-commit qui bloque les commits sur main, protocole de dispatch remonté au début de la phase 4. Puis ouvrir les questions (20 min).</aside>
+</section>
+
+<section class="title-slide vo2-dark vo2-outro">
+  <h1>Merci pour votre temps.</h1>
+  <p class="sub" style="font-size:.75em">J'espère que ça vous a été utile.</p>
+  <p class="meta">Place aux questions</p>
+  <aside class="notes">Fin de la présentation — 40:00. Remercier, puis ouvrir les 20 minutes de questions.</aside>
 </section>
 
 <!-- ══════════ PARTIE 2 — L'ATELIER (non présenté — conservé pour référence) ══════════ -->
